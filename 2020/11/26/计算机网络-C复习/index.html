@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/tou.webp">
+  <title>计算机网络[C复习 | 清风逝</title>
+  <meta name="author" content="Sakura" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="复习, 计算机网络" />
+  
+  <meta name="description" content="**Lilin**  首页  标签  分类  归档 计算机网络-重点复习 2018-06-07 | 计算机网络 第一章：概论NO.1 OSI&#x2F;RM国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一个七层体系结构  TCP&#x2F;IP得到最广泛应用的计算机网络体系结构，被称为是事实上的国际标准，是一个四层体系结构  五层协议模型综合OSI和TCP&#x2F;IP的优点，在学习计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络[C复习">
+<meta property="og:url" content="http://example.com/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-C%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="清风逝">
+<meta property="og:description" content="**Lilin**  首页  标签  分类  归档 计算机网络-重点复习 2018-06-07 | 计算机网络 第一章：概论NO.1 OSI&#x2F;RM国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一个七层体系结构  TCP&#x2F;IP得到最广泛应用的计算机网络体系结构，被称为是事实上的国际标准，是一个四层体系结构  五层协议模型综合OSI和TCP&#x2F;IP的优点，在学习计">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/tou.webp">
+<meta property="article:published_time" content="2020-11-26T06:44:31.000Z">
+<meta property="article:modified_time" content="2020-11-26T06:45:23.676Z">
+<meta property="article:author" content="Sakura">
+<meta property="article:tag" content="复习">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/tou.webp">
+<meta name="twitter:site" content="@无">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">清风逝</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://candinya.com">作者博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/liao110">项目链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>清风逝</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">计算机网络[C复习</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2020-11-26
+                        <i class="fa fa-folder"></i> 分类于 
+                        <i class="fa fa-user"></i> 作者 Sakura
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~8.73K
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                <hr />
+                <p><a target="_blank" rel="noopener" href="https://soporbear.github.io/">**<br>Lilin**</a></p>
+<p><a target="_blank" rel="noopener" href="https://soporbear.github.io/"> 首页</a> <a target="_blank" rel="noopener" href="https://soporbear.github.io/tags/"> 标签</a> <a target="_blank" rel="noopener" href="https://soporbear.github.io/categories/"> 分类</a> <a target="_blank" rel="noopener" href="https://soporbear.github.io/archives/"> 归档</a></p>
+<h1 id="计算机网络-重点复习"><a href="#计算机网络-重点复习" class="headerlink" title="计算机网络-重点复习"></a>计算机网络-重点复习</h1><p> 2018-06-07 | <a target="_blank" rel="noopener" href="https://soporbear.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p>
+<h1 id="第一章：概论"><a href="#第一章：概论" class="headerlink" title="第一章：概论"></a>第一章：概论</h1><h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="OSI-RM"><a href="#OSI-RM" class="headerlink" title="OSI/RM"></a>OSI/RM</h3><p>国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一个七层体系结构</p>
+</li>
+<li><h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>得到最广泛应用的计算机网络体系结构，被称为是事实上的国际标准，是一个四层体系结构</p>
+</li>
+<li><h3 id="五层协议模型"><a href="#五层协议模型" class="headerlink" title="五层协议模型"></a>五层协议模型</h3><p>综合OSI和TCP/IP的优点，在学习计算机网络时采用一种只有五层协议的体系结构，既简洁又能将概念阐释清楚</p>
+</li>
+<li><h3 id="三种协议模型的对应关系"><a href="#三种协议模型的对应关系" class="headerlink" title="三种协议模型的对应关系"></a>三种协议模型的对应关系</h3><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180607125301984.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>控制两个对等实体（或多个实体）进行通信的规则的集合</p>
+</li>
+<li><h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3><p>在协议控制下，两个对等实体间的通信使得本层能够向上一层提供服务。要实现本层协议，还需要使用下面一层所提供的服务</p>
+</li>
+<li><h3 id="协议三要素"><a href="#协议三要素" class="headerlink" title="协议三要素"></a>协议三要素</h3><ul>
+<li><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><p>数据与控制信息的结构或格式</p>
+</li>
+<li><h4 id="语义"><a href="#语义" class="headerlink" title="语义"></a>语义</h4><p>即需要发出何种控制信息，完成何种动作以及做出何种响应</p>
+</li>
+<li><h4 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h4><p>时间完成顺序的详细说明</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="计算机网络组成（按结构分解）"><a href="#计算机网络组成（按结构分解）" class="headerlink" title="计算机网络组成（按结构分解）"></a>计算机网络组成（按结构分解）</h3><ul>
+<li><h4 id="边缘部分"><a href="#边缘部分" class="headerlink" title="边缘部分"></a>边缘部分</h4><p>由所有连接在互联网上的主机组成。这部分是用户直接使用的，用来进行通信和资源共享</p>
+</li>
+<li><h4 id="核心部分"><a href="#核心部分" class="headerlink" title="核心部分"></a>核心部分</h4><p>由大量网络和连接这些网络的路由器组成。这部分是为边缘部分提供服务的</p>
+</li>
+</ul>
+</li>
+<li><h3 id="计算机网络组成（按功能分解）"><a href="#计算机网络组成（按功能分解）" class="headerlink" title="计算机网络组成（按功能分解）"></a>计算机网络组成（按功能分解）</h3><ul>
+<li><h4 id="通信子网"><a href="#通信子网" class="headerlink" title="通信子网"></a>通信子网</h4><p>主要负责全网的数据通信。包括通信线路、网络连接设备、网络通信协议和通信控制软件等</p>
+</li>
+<li><h4 id="资源子网"><a href="#资源子网" class="headerlink" title="资源子网"></a>资源子网</h4><p>主要负责全网的信息处理。包括网络中所有的主计算机、I/O设备和终端，各种网络协议、网络软件和数据库等</p>
+</li>
+</ul>
+</li>
+<li><h3 id="计算机网络三要素：结点、链路和线路"><a href="#计算机网络三要素：结点、链路和线路" class="headerlink" title="计算机网络三要素：结点、链路和线路"></a>计算机网络三要素：结点、链路和线路</h3><p>在讨论路由转发分组的过程中，往往把单个网络简化成一条</p>
+<p>链路</p>
+<p>，而路由器称为核心部分的</p>
+<p>结点</p>
+</li>
+</ul>
+<h2 id="NO-3"><a href="#NO-3" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li><h3 id="internet"><a href="#internet" class="headerlink" title="internet"></a>internet</h3><p>以小写字母i开头的internet是一个通用名词，泛指由多个计算机网络互连而成的计算机网络</p>
+</li>
+<li><h3 id="Internet"><a href="#Internet" class="headerlink" title="Internet"></a>Internet</h3><p>以大写字母I开头的Internet是一个专有名词，指当前全球最大的、开放的、由众多网络相互连接而成的特定互联网，它采用TCP/IP协议簇作为通信规则，其前身是美国的ARPANET</p>
+</li>
+</ul>
+<h2 id="NO-4"><a href="#NO-4" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="客户-服务器方式"><a href="#客户-服务器方式" class="headerlink" title="客户-服务器方式"></a>客户-服务器方式</h3><p>客户（client）和服务器（server）都是指通信中所涉及的两个应用进程</p>
+<p>客户是服务请求方，服务器是服务提供方</p>
+</li>
+</ul>
+<h2 id="NO-5"><a href="#NO-5" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><p>整个报文的比特流连续地从源点直达终点，好像在一个管道中传送</p>
+</li>
+<li><h3 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h3><p>整个报文先传送到相邻节点，全部存储下来后查找转发表，转发到下一节点</p>
+</li>
+<li><h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p>单个分组（整个报文的一部分）传送到相邻结点，存储下来后查找转发表，转发到下一结点</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180607013703828.png"><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180607013703828.png" alt="img"></a></p>
+<ul>
+<li><h3 id="分组交换的主要特点"><a href="#分组交换的主要特点" class="headerlink" title="分组交换的主要特点"></a>分组交换的主要特点</h3><p>通常我们把要发送的整块数据称为一个</p>
+<p>报文</p>
+<p>，在发送报文前，先把较长的报文划分成为一个个更小的等长数据段，在每个数据段前面，加上一些由必要的控制信息组成的</p>
+<p>首部</p>
+<p>后，就构成了一个</p>
+<p>分组</p>
+<p>。分组又称为</p>
+<p>包</p>
+<p>，首部也可称为</p>
+<p>包头</p>
+<p>。正是由于分组的首部包含了诸如目的地址和源地址等重要信息，每一个分组才能在互联网中独立选择传输路径并被正确托付到分组传输的终点</p>
+</li>
+</ul>
+<h2 id="NO-6"><a href="#NO-6" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="计算机网络的分类-按拓扑）"><a href="#计算机网络的分类-按拓扑）" class="headerlink" title="计算机网络的分类(按拓扑）"></a>计算机网络的分类(按拓扑）</h3><p>总线型、星型、环型、树型、网状型</p>
+</li>
+<li><h3 id="计算机网络的分类-按覆盖范围）"><a href="#计算机网络的分类-按覆盖范围）" class="headerlink" title="计算机网络的分类(按覆盖范围）"></a>计算机网络的分类(按覆盖范围）</h3><p>局域网LAN(Local Area Network)、城域网MAN(Metropolitan Area Network)、广域网WAN(Wide Area Network)、个人区域网PAN(Personal Area Network)</p>
+</li>
+</ul>
+<h2 id="NO-7"><a href="#NO-7" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="计算机网络的性能"><a href="#计算机网络的性能" class="headerlink" title="计算机网络的性能"></a>计算机网络的性能</h3><ul>
+<li><h4 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h4><p>数据的传送速率，单位：bit/s</p>
+</li>
+<li><h4 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h4><p>有两种不同含义：</p>
+<ol>
+<li>某信道允许通过的信号频带范围，单位：Hz</li>
+<li>计算机网络中，某通道传送数据的能力（最高数据率），单位：bit/s</li>
+</ol>
+</li>
+<li><h4 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h4><p>单位时间内通过某网络（或信道，接口）的实际数据量</p>
+</li>
+<li><h4 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h4><p>指数据从网络一传送到另一端所需要的时间，又称</p>
+<p>延迟</p>
+<p>或</p>
+<p>迟延</p>
+<p>总时延 = 发送时延+传播时延+处理时延+排队时延</p>
+<p>发送时延 = 数据帧长度（bit）/发送速率（bit/s）</p>
+<p>传播时延 = 信道长度（m）/电磁波在信道上的传输速率（m/s）</p>
+</li>
+</ul>
+</li>
+<li><h3 id="往返时间RTT和有效数据率"><a href="#往返时间RTT和有效数据率" class="headerlink" title="往返时间RTT和有效数据率"></a>往返时间RTT和有效数据率</h3><p>有效数据率 = 数据长度/（发送时间+RTT）</p>
+</li>
+</ul>
+<h1 id="第二章：物理层与通信基础"><a href="#第二章：物理层与通信基础" class="headerlink" title="第二章：物理层与通信基础"></a>第二章：物理层与通信基础</h1><h2 id="NO-1-1"><a href="#NO-1-1" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="物理层上接口特性"><a href="#物理层上接口特性" class="headerlink" title="物理层上接口特性"></a>物理层上接口特性</h3><ul>
+<li><h4 id="机械特性"><a href="#机械特性" class="headerlink" title="机械特性"></a>机械特性</h4><p>指明接口所用接线器的形状和尺寸、引脚数目和排列、固定和锁定装置等。平时常见的各种规格的接插件都有严格的标准化的规定</p>
+</li>
+<li><h4 id="电气特性"><a href="#电气特性" class="headerlink" title="电气特性"></a>电气特性</h4><p>指明在接口电缆的各条线上出现的电压的范围</p>
+</li>
+<li><h4 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h4><p>指明某条线上出现的某一电平的电压的意义</p>
+</li>
+<li><h4 id="过程特性"><a href="#过程特性" class="headerlink" title="过程特性"></a>过程特性</h4><p>指明对于不同功能的各种可能事件的出现顺序</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-2-1"><a href="#NO-2-1" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="数据通信系统的三大组成部分"><a href="#数据通信系统的三大组成部分" class="headerlink" title="数据通信系统的三大组成部分"></a>数据通信系统的三大组成部分</h3><ul>
+<li><h4 id="源系统（发送端、发送方）"><a href="#源系统（发送端、发送方）" class="headerlink" title="源系统（发送端、发送方）"></a>源系统（发送端、发送方）</h4><p>源系统一般包括以下两部分：</p>
+<ul>
+<li><h5 id="源点（源站，信源）"><a href="#源点（源站，信源）" class="headerlink" title="源点（源站，信源）"></a>源点（源站，信源）</h5><p>源点设备产生要传输的数据</p>
+</li>
+<li><h5 id="发送器"><a href="#发送器" class="headerlink" title="发送器"></a>发送器</h5><p>通常源点设备产生的数字比特流要通过发送器编码后才能传输。典型的发送器如调制器</p>
+</li>
+</ul>
+</li>
+<li><h4 id="目的系统（接收端、接受方）"><a href="#目的系统（接收端、接受方）" class="headerlink" title="目的系统（接收端、接受方）"></a>目的系统（接收端、接受方）</h4><p>一般也包括两部分：</p>
+<ul>
+<li><h5 id="接收器"><a href="#接收器" class="headerlink" title="接收器"></a>接收器</h5><p>接受传输系统传送过来的信号，并把它转化为能够处理的信息。典型的接收器如解调器</p>
+</li>
+<li><h5 id="终点（目的站，信宿）"><a href="#终点（目的站，信宿）" class="headerlink" title="终点（目的站，信宿）"></a>终点（目的站，信宿）</h5><p>终点设备接受接收器传输过来的数字比特流并输出</p>
+</li>
+</ul>
+</li>
+<li><h4 id="传输系统（传输网络）"><a href="#传输系统（传输网络）" class="headerlink" title="传输系统（传输网络）"></a>传输系统（传输网络）</h4><p>传输系统可以是简单的一条线，也可以是复杂的网络系统</p>
+</li>
+</ul>
+</li>
+<li><h3 id="三种基本的通信方式"><a href="#三种基本的通信方式" class="headerlink" title="三种基本的通信方式"></a>三种基本的通信方式</h3><ul>
+<li><h4 id="单向通行（单工通信）"><a href="#单向通行（单工通信）" class="headerlink" title="单向通行（单工通信）"></a>单向通行（单工通信）</h4><p>只有一个方向的通信而没有反方向的交互</p>
+</li>
+<li><h4 id="双向交替通信-半双工通信）"><a href="#双向交替通信-半双工通信）" class="headerlink" title="双向交替通信(半双工通信）"></a>双向交替通信(半双工通信）</h4><p>通信双方都可以发送信息，但不能同时发送</p>
+</li>
+<li><h4 id="双向同时通信（全双工通信）"><a href="#双向同时通信（全双工通信）" class="headerlink" title="双向同时通信（全双工通信）"></a>双向同时通信（全双工通信）</h4><p>通信双方可以同时发送和接受信息</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-3-1"><a href="#NO-3-1" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li><h3 id="编码与调制"><a href="#编码与调制" class="headerlink" title="编码与调制"></a>编码与调制</h3><ul>
+<li><h4 id="数字数据—-gt-数字信号"><a href="#数字数据—-gt-数字信号" class="headerlink" title="数字数据—&gt;数字信号"></a>数字数据—&gt;数字信号</h4><ul>
+<li><h5 id="不归零编码"><a href="#不归零编码" class="headerlink" title="不归零编码"></a>不归零编码</h5><p>正电平代表1，负电平代表0</p>
+</li>
+<li><h5 id="归零制编码"><a href="#归零制编码" class="headerlink" title="归零制编码"></a>归零制编码</h5><p>正脉冲（电子电路中的电平状态突变）代表1，负脉冲代表0</p>
+</li>
+<li><h5 id="曼彻斯特编码"><a href="#曼彻斯特编码" class="headerlink" title="曼彻斯特编码"></a>曼彻斯特编码</h5><p>位于中心周期的向上跳代表0，位于周期中心的向下跳代表1。曼彻斯特编码可以从信号波形中提取信号时钟频率，具有自同步功能</p>
+</li>
+<li><h5 id="差分曼彻斯特编码"><a href="#差分曼彻斯特编码" class="headerlink" title="差分曼彻斯特编码"></a>差分曼彻斯特编码</h5><p>在每一位的中心处始终都有跳变。位开始边界有跳变代表0，位开始边界没有跳变代表1</p>
+</li>
+</ul>
+</li>
+<li><h4 id="模拟数据-–-gt-模拟信号"><a href="#模拟数据-–-gt-模拟信号" class="headerlink" title="模拟数据 –&gt;模拟信号"></a>模拟数据 –&gt;模拟信号</h4><ul>
+<li><h5 id="调幅AM"><a href="#调幅AM" class="headerlink" title="调幅AM"></a>调幅AM</h5><p>载波振幅随基带数字信号而变化</p>
+</li>
+<li><h5 id="调频FM"><a href="#调频FM" class="headerlink" title="调频FM"></a>调频FM</h5><p>载波频率随基带数字信号而变化</p>
+</li>
+<li><h5 id="调相PM"><a href="#调相PM" class="headerlink" title="调相PM"></a>调相PM</h5><p>载波初始相位随基带数字信号而变化</p>
+</li>
+<li><h5 id="正交振幅调制QAM"><a href="#正交振幅调制QAM" class="headerlink" title="正交振幅调制QAM"></a>正交振幅调制QAM</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-4-1"><a href="#NO-4-1" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="信道极限容量"><a href="#信道极限容量" class="headerlink" title="信道极限容量"></a>信道极限容量</h3><ul>
+<li><h4 id="信噪比"><a href="#信噪比" class="headerlink" title="信噪比"></a>信噪比</h4><p>信噪比(dB) = 10 log10 (S/N)（dB）</p>
+</li>
+<li><h4 id="香农公式"><a href="#香农公式" class="headerlink" title="香农公式"></a>香农公式</h4><p>信道的极限信息传输速率C = W log2 (1+S/N)（bit/s)</p>
+<p>W为信道的带宽，单位：Hz；S为信道内所传信号的平均功率；N为信道内部的高斯噪声功率</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-5-1"><a href="#NO-5-1" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="导引型传输媒体"><a href="#导引型传输媒体" class="headerlink" title="导引型传输媒体"></a>导引型传输媒体</h3><ul>
+<li><h4 id="双绞线"><a href="#双绞线" class="headerlink" title="双绞线"></a>双绞线</h4><ul>
+<li><h5 id="无屏蔽双绞线"><a href="#无屏蔽双绞线" class="headerlink" title="无屏蔽双绞线"></a>无屏蔽双绞线</h5><p>绞合可减少对相邻导线的电磁干扰</p>
+</li>
+<li><h5 id="屏蔽双绞线"><a href="#屏蔽双绞线" class="headerlink" title="屏蔽双绞线"></a>屏蔽双绞线</h5><p>在双绞线外面加一层用金属丝编制称的网</p>
+</li>
+</ul>
+</li>
+<li><h4 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h4><p>由内导体铜质线芯、绝缘层、网状编制的外导体屏蔽层以及保护塑料外层所组成，抗干扰能力强，广泛用于传输较高速率的数据</p>
+</li>
+<li><h4 id="光缆"><a href="#光缆" class="headerlink" title="光缆"></a>光缆</h4><ul>
+<li><h5 id="多模光纤"><a href="#多模光纤" class="headerlink" title="多模光纤"></a>多模光纤</h5><p>多模光纤可以存在多条不同角度入射的光线在一条光纤中传输，适合近距离传输</p>
+</li>
+<li><h5 id="单模光纤"><a href="#单模光纤" class="headerlink" title="单模光纤"></a>单模光纤</h5><p>光线一直向前传播，而不会产生多次反射</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="非导引型传输媒介"><a href="#非导引型传输媒介" class="headerlink" title="非导引型传输媒介"></a>非导引型传输媒介</h3><p>无线信道</p>
+</li>
+<li><h3 id="Nbase-2-5-T-F的含义"><a href="#Nbase-2-5-T-F的含义" class="headerlink" title="Nbase-2/5/T/F的含义"></a>Nbase-2/5/T/F的含义</h3><p>10base-2 传输速率是10Mbps,基带传输,最大传输距离185m,传输介质是 细同轴电缆</p>
+<p>10base-5传输速率是10Mbps,基带传输,最大传输距离500m,传输介质是 粗同轴电缆</p>
+<p>10base-T传输速率是10Mbps,基带传输 传输介质是双绞线,</p>
+<p>10base-F传输速率是10Mbps,基带传输,传输介质是光纤</p>
+</li>
+</ul>
+<h2 id="NO-6-1"><a href="#NO-6-1" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="信道复用"><a href="#信道复用" class="headerlink" title="信道复用"></a>信道复用</h3><ul>
+<li><h4 id="频分复用FDM"><a href="#频分复用FDM" class="headerlink" title="频分复用FDM"></a>频分复用FDM</h4><p>将用于传输信道的总带宽划分成若干个子频带（或称子信道），每一个子信道传输一路信号</p>
+</li>
+<li><h4 id="时分复用TDM"><a href="#时分复用TDM" class="headerlink" title="时分复用TDM"></a>时分复用TDM</h4><p>将提供给整个信道传输信息的时间划分成若干时间片(简称时隙)，并将这些时隙分配给每一个信号源使用</p>
+</li>
+<li><h4 id="波分复用WDM"><a href="#波分复用WDM" class="headerlink" title="波分复用WDM"></a>波分复用WDM</h4><p>波分复用即光的频分复用</p>
+</li>
+<li><h4 id="码分复用CDM（或码分多址CDMA）"><a href="#码分复用CDM（或码分多址CDMA）" class="headerlink" title="码分复用CDM（或码分多址CDMA）"></a>码分复用CDM（或码分多址CDMA）</h4><p>每一个用户在同样的时间使用同样的频带进行通信，由于各用户使用不同码型，所以不会造成干扰</p>
+<p>CDMA系统的一个重要特点就是这种体制给每一个站分配的码片序列不仅必须各不相同，而且还必须互相正交</p>
+<p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180607041739797.png" alt="img"></p>
+<p>Sx · Tx = 0</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-7-1"><a href="#NO-7-1" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="宽带接入技术"><a href="#宽带接入技术" class="headerlink" title="宽带接入技术"></a>宽带接入技术</h3><ul>
+<li><h4 id="ADSL技术"><a href="#ADSL技术" class="headerlink" title="ADSL技术"></a>ADSL技术</h4><p>用数字技术对现有的模拟电话用户线进行改造</p>
+</li>
+<li><h4 id="光纤同轴混合网（HFC网）"><a href="#光纤同轴混合网（HFC网）" class="headerlink" title="光纤同轴混合网（HFC网）"></a>光纤同轴混合网（HFC网）</h4><p>一种在目前覆盖面很广的有限电视网的基础上开发的一种居民宽带接入网，HFC网把原有电视网中同轴电缆主干部分改换为光纤</p>
+</li>
+<li><h4 id="FTTx技术"><a href="#FTTx技术" class="headerlink" title="FTTx技术"></a>FTTx技术</h4><p>光纤到户</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="第三章：数据链路层"><a href="#第三章：数据链路层" class="headerlink" title="第三章：数据链路层"></a>第三章：数据链路层</h1><h2 id="NO-1-2"><a href="#NO-1-2" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="数据链路层的三个基本问题"><a href="#数据链路层的三个基本问题" class="headerlink" title="数据链路层的三个基本问题"></a>数据链路层的三个基本问题</h3><ul>
+<li><h4 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h4><p>在一段数据的前后分别添加首部和尾部，就构成了一个帧，接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，识别出帧的开始和结束</p>
+<p>首部和尾部的一个重要作用就是</p>
+<p>帧定界</p>
+<p>，此外还包含许多控制信息</p>
+<p>每一种链路层协议都规定了所能传送的帧的</p>
+<p>数据部分长度上限————最大传送单元MTU</p>
+<p>控制字符SOH(Start Of Header)表示首部开始，EOT(End Of Transmission)标识帧的结束</p>
+</li>
+<li><h4 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h4><p>无论什么样的比特组合的数据，都能按照原样没有差错地通过这个数据链路层</p>
+<p>为了使数据中可能出现的SOH或EOT在接收端不被解释为控制字符，发送端的数据链路层在数据中出现的控制字符SOH或EOT或ESC的前面插入一个转义字符ESC，在接收端的数据链路层在把数据送往网络层之前删除这个插入的转义字符，这叫做</p>
+<p>字节填充</p>
+<p>或</p>
+<p>字符填充</p>
+</li>
+<li><h4 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a>差错检测</h4><p>比特在传输过程中可能会产生差错，在一段时间内，传输错误的比特占传输比特总数的比特率称为误码率BER(Bit Error Rate)</p>
+<p>为了保证数据传输可靠性，必须采用差错检测措施</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-2-2"><a href="#NO-2-2" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="循环冗余校验CRC"><a href="#循环冗余校验CRC" class="headerlink" title="循环冗余校验CRC"></a>循环冗余校验CRC</h3><ol>
+<li>在发送端先把数据划分为组，每组k个比特，其中一组为M</li>
+<li>事先商定好一个(n+1)位的数P，并在M后面添加n个0</li>
+<li>用得到的(k+n)位的数除以P，得出商Q(没有用)和n位的余数R</li>
+<li>余数R作为冗余码拼接在M的后面发送出去</li>
+<li>在接收端把收到的帧除以P，检查余数是否为0</li>
+</ol>
+<p>这种为了进行检错而添加的冗余码称为<strong>帧检验序列FCS</strong><br>CRC仅能做到<strong>无差错接受</strong>，而非<strong>可靠传输</strong></p>
+</li>
+</ul>
+<h2 id="NO-3-2"><a href="#NO-3-2" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li>对于通信质量良好的有线链路，数据链路层协议不使用确认和重传机制，即不要求其提供可靠传输的服务，可靠传输由传输层完成</li>
+<li>对于通信质量差的无线链路，需要考虑帧丢失、帧出错和帧重复，采用了帧编号、确认和重传机制</li>
+</ul>
+<h2 id="NO-4-2"><a href="#NO-4-2" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="零比特填充"><a href="#零比特填充" class="headerlink" title="零比特填充"></a>零比特填充</h3><p>PPP协议用在SONET/SDH链路时，使用同步传输（一连串的比特流连续传输），这种情况下，PPP协议采用零比特填充方法来实现透明传输</p>
+<p>具体做法：在发送端，先扫描整个信息字段，只要发现有五个连续的1，立即填入一个0，接收端相反</p>
+</li>
+</ul>
+<h2 id="NO-5-2"><a href="#NO-5-2" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="局域网的介质访问控制"><a href="#局域网的介质访问控制" class="headerlink" title="局域网的介质访问控制"></a>局域网的介质访问控制</h3><ul>
+<li><h4 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h4><p>载波监听多点接入/碰撞检测，要点：</p>
+<ul>
+<li><h5 id="多点接入"><a href="#多点接入" class="headerlink" title="多点接入"></a>多点接入</h5><p>总线型网络，许多计算机以多点接入的方式连接在一起</p>
+</li>
+<li><h5 id="载波监听"><a href="#载波监听" class="headerlink" title="载波监听"></a>载波监听</h5><p>用电子技术检测总线上有没有其他计算机也在发送，即检测信道，不管在发送前还是发送中，每个站都必须不停地检测信道</p>
+</li>
+<li><h5 id="碰撞检测"><a href="#碰撞检测" class="headerlink" title="碰撞检测"></a>碰撞检测</h5><p>即边发送边监听，也称冲突检测</p>
+</li>
+</ul>
+</li>
+<li><h4 id="以太网的最短帧长"><a href="#以太网的最短帧长" class="headerlink" title="以太网的最短帧长"></a>以太网的最短帧长</h4><p>64B即512bit，凡小于64字节的帧都是由于冲突而异常终止的无效帧</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-6-2"><a href="#NO-6-2" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h3><p>在局域网中，</p>
+<p>硬件地址</p>
+<p>也称</p>
+<p>物理地址</p>
+<p>或</p>
+<p>MAC地址</p>
+<p>，每个主机可用MAC来标识它在局域网中的地址</p>
+</li>
+</ul>
+<h2 id="NO-7-2"><a href="#NO-7-2" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="以太网的扩展与碰撞域的概念"><a href="#以太网的扩展与碰撞域的概念" class="headerlink" title="以太网的扩展与碰撞域的概念"></a>以太网的扩展与碰撞域的概念</h3><ul>
+<li><h4 id="物理层扩展（集线器）"><a href="#物理层扩展（集线器）" class="headerlink" title="物理层扩展（集线器）"></a>物理层扩展（集线器）</h4><p>在每个系的以太网互连起来之前，每一个系的以太网是一个独立的</p>
+<p>碰撞域</p>
+<p>（或</p>
+<p>冲突域</p>
+<p>），最大吞吐量为每个系最大吞吐量总和，通过集线器互连以后就变成了一个大的碰撞域，某个系的两个站在通信时所传送的数据会通过所有的集线器进行转发，当某个系的两个站通信时，传输数据会通过所有集线器进行转发，使其他系内部不能通信</p>
+</li>
+<li><h4 id="数据链路层扩展（网桥-交换机）"><a href="#数据链路层扩展（网桥-交换机）" class="headerlink" title="数据链路层扩展（网桥/交换机）"></a>数据链路层扩展（网桥/交换机）</h4><ul>
+<li><strong>网桥</strong>的作用是对其收到的帧根据MAC帧的目的地址进行转发和过滤，和集线器不同，网桥并不会向所有接口转发，而是根据MAC地址，查找地址表，然后转发或丢弃</li>
+<li><strong>交换式集线器</strong>（又称第二层交换机）就是一个多接口的网桥，它具有并行性，能使多对主机同时通信（网桥一次只能转发一个帧），交换机内部有一个通过<strong>自学习</strong>算法建立起来的帧<strong>交换表</strong></li>
+</ul>
+</li>
+<li><h4 id="网桥-交换机与集线器相比的优点"><a href="#网桥-交换机与集线器相比的优点" class="headerlink" title="网桥/交换机与集线器相比的优点"></a>网桥/交换机与集线器相比的优点</h4><p>因为网桥/交换机具有缓存功能，它可以将不同拓扑结构的、不同帧格式的、不同传输速率的网络连接起来</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="第四章：网络层"><a href="#第四章：网络层" class="headerlink" title="第四章：网络层"></a>第四章：网络层</h1><h2 id="NO-1-3"><a href="#NO-1-3" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="互联网中网络层的设计思路"><a href="#互联网中网络层的设计思路" class="headerlink" title="互联网中网络层的设计思路"></a>互联网中网络层的设计思路</h3><p>网络层只提供简单灵活的、无连接的、仅最大努力交付的数据包服务，流量控制和差错处理交给传输层来完成</p>
+</li>
+</ul>
+<h2 id="NO-2-3"><a href="#NO-2-3" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="网络互连的概念"><a href="#网络互连的概念" class="headerlink" title="网络互连的概念"></a>网络互连的概念</h3><p>中间设备利用转发器(集线器)或网桥（包括以太网交换机）时，只是把一个相同网段的主机连在了一起，只是把网络规模扩大了，这仍然是一个网络，不将其称作网络互连</p>
+<p>而中间设备使用路由器时，将不同网段的网络连在了一起，主机通信过程中涉及到路由选择问题，这时才称作网络互连</p>
+<p>集线器、网桥、以太网交换机/第二层交换机只是扩大了网络范围，而路由器能实现网络互连</p>
+</li>
+</ul>
+<h2 id="NO-3-3"><a href="#NO-3-3" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li><h3 id="分类IP地址"><a href="#分类IP地址" class="headerlink" title="分类IP地址"></a>分类IP地址</h3><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180614104014355.png" alt="img"></p>
+</li>
+<li><h4 id="特殊地址"><a href="#特殊地址" class="headerlink" title="特殊地址"></a>特殊地址</h4><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180614104239150.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="NO-4-3"><a href="#NO-4-3" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议ARP</h3><ul>
+<li><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>解决同一局域网上的IP地址和MAC地址的映射问题，将IP地址映射为MAC地址。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-5-3"><a href="#NO-5-3" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="IP数据报"><a href="#IP数据报" class="headerlink" title="IP数据报"></a>IP数据报</h3><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/%E7%89%B9%E5%88%AB%E8%A6%81%E6%8E%8C%E6%8F%A1%E5%88%86%E7%89%87%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%BE130%E8%A1%A84-5%E6%80%8E%E4%B9%88%E6%9D%A5%E7%9A%84%EF%BC%89.png" alt="img"></p>
+</li>
+<li><h3 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h3><p>以太网规定其</p>
+<p>最大传送单元MTU</p>
+<p>为1500字节，若超长则必须进行分片处理</p>
+<p>IP协议规定，互联网中所有主机和路由，必须能接受长度不超过576B(512B(合理的长度)+60B(最长的IP首部)+4B(富余量))的数据包，若数据报超过576B目的主机无法接收，则进行分片</p>
+<ul>
+<li><h4 id="标识"><a href="#标识" class="headerlink" title="标识"></a>标识</h4><p>相同标识的分组数据包组装为原来的数据包</p>
+</li>
+<li><h4 id="标志"><a href="#标志" class="headerlink" title="标志"></a>标志</h4><ul>
+<li><h5 id="最低位MF"><a href="#最低位MF" class="headerlink" title="最低位MF"></a>最低位<strong>MF</strong></h5><p>MF = 1，还有分片；MF = 0，已是最后一个</p>
+</li>
+<li><h5 id="中间一位DF"><a href="#中间一位DF" class="headerlink" title="中间一位DF"></a>中间一位<strong>DF</strong></h5><p>DF = 1，不能分片；DF = 0，允许分片</p>
+</li>
+</ul>
+</li>
+<li><h4 id="片偏移"><a href="#片偏移" class="headerlink" title="片偏移"></a>片偏移</h4><p>分片在原分组中的相对位置，以8个字节为偏移单位</p>
+<h2 id="NO-6-3"><a href="#NO-6-3" class="headerlink" title="NO.6"></a>NO.6</h2></li>
+</ul>
+</li>
+<li><h3 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h3><ul>
+<li><h4 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h4><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180614110600365.png" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-7-3"><a href="#NO-7-3" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="CIDR（无类域间路由）"><a href="#CIDR（无类域间路由）" class="headerlink" title="CIDR（无类域间路由）"></a>CIDR（无类域间路由）</h3><ul>
+<li>CIDR消除了传统的A/B/C类地址以及划分子网的概念</li>
+<li>CIDR使用地址掩码来标识网络前缀（用来指明网络），也可继续称为子网掩码</li>
+<li>使用斜线记法：128/8等价于128.0.0.0/8</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-8"><a href="#NO-8" class="headerlink" title="NO.8"></a>NO.8</h2><ul>
+<li><h3 id="最长前缀匹配"><a href="#最长前缀匹配" class="headerlink" title="最长前缀匹配"></a>最长前缀匹配</h3><p>查找路由表时，应从匹配结果中选择具有最长网络前缀的路由，又称</p>
+<p>最长匹配</p>
+<p>或</p>
+<p>最佳匹配</p>
+</li>
+</ul>
+<h2 id="NO-9"><a href="#NO-9" class="headerlink" title="NO.9"></a>NO.9</h2><ul>
+<li><h3 id="路由聚合"><a href="#路由聚合" class="headerlink" title="路由聚合"></a>路由聚合</h3><p>在路由表中利用CIDR地址块来查找目的网络，这种地址的聚合称为路由聚合</p>
+<p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180614112555090.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="NO-10"><a href="#NO-10" class="headerlink" title="NO.10"></a>NO.10</h2><ul>
+<li><h3 id="RIP协议"><a href="#RIP协议" class="headerlink" title="RIP协议"></a>RIP协议</h3><ul>
+<li><h4 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h4><p>一种分布式的基于距离向量的路由选择协议</p>
+</li>
+<li><h4 id="距离向量算法"><a href="#距离向量算法" class="headerlink" title="距离向量算法"></a>距离向量算法</h4><ol>
+<li><p>对地址为X的相邻路由器发送过来的RIP报文（目的网络N，距离d，下一跳路由器X），将此报文中的的所有下一跳地址改为X并把距离字段值加1</p>
+</li>
+<li><p>若原来的路由表没有目的网络N，则添加到路由表，若有网络N且原来的下一跳路由器地址为X，则替换掉原来的（以最新消息为准），若有网络N且下一跳地址不是X，则比较距离大小，更新为更小的那个</p>
+</li>
+<li><p>若3分钟未收到更新路由表，则把距离置为16（16表示不可达）</p>
+<h2 id="NO-11"><a href="#NO-11" class="headerlink" title="NO.11"></a>NO.11</h2></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><h3 id="Ping与ICMP协议"><a href="#Ping与ICMP协议" class="headerlink" title="Ping与ICMP协议"></a>Ping与ICMP协议</h3><p>Ping是应用层直接使用网络层ICMP（网际控制报文协议）的一个例子，它没有通过运输层的TCP或UDP</p>
+</li>
+</ul>
+<h2 id="NO-12"><a href="#NO-12" class="headerlink" title="NO.12"></a>NO.12</h2><ul>
+<li><h3 id="VPN和NAT"><a href="#VPN和NAT" class="headerlink" title="VPN和NAT"></a>VPN和NAT</h3><ul>
+<li><h4 id="本地地址"><a href="#本地地址" class="headerlink" title="本地地址"></a>本地地址</h4><p>在所有路由器中，对以下</p>
+<p>专用地址</p>
+<p>数据报一律不进行转发</p>
+</li>
+</ul>
+<ol>
+<li>10.0.0.0 - 10.255.255.255（10.0.0.0/8 24位块）</li>
+<li>172.16.0.0 - 172.31.255.255（172.16.0.0/12 20位块）</li>
+<li>192.168.0.0 - 192.168.255.255（192.168.0.0/16 16位块）<br>采用专用IP地址的互连网称为<strong>专用互联网</strong>或<strong>本地互联网</strong>，专用IP地址又称<strong>可重用地址</strong><br>利用公用互联网作为本机构各个专用网之间的通信载体，这样的专用网又称<strong>虚拟专用网VPN</strong></li>
+</ol>
+<ul>
+<li><h4 id="网络地址转换协议NAT"><a href="#网络地址转换协议NAT" class="headerlink" title="网络地址转换协议NAT"></a>网络地址转换协议NAT</h4><p>NAT路由器的NAT转换表</p>
+<p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180614114708100.png" alt="img"></p>
+</li>
+<li><h4 id="网络地址与端口号转换NAPT"><a href="#网络地址与端口号转换NAPT" class="headerlink" title="网络地址与端口号转换NAPT"></a>网络地址与端口号转换NAPT</h4><p>即使用端口号的NAPT，可以使多个拥有本地地址的主机，共用一个NAT路由器上的全球IP地址</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-13"><a href="#NO-13" class="headerlink" title="NO.13"></a>NO.13</h2><ul>
+<li><h3 id="自治系统内部的路由选择协议IGP"><a href="#自治系统内部的路由选择协议IGP" class="headerlink" title="自治系统内部的路由选择协议IGP"></a>自治系统内部的路由选择协议IGP</h3><p>RIP,OSPF属于IGP</p>
+</li>
+<li><h3 id="自洽系统之间的路由选择协议EGP"><a href="#自洽系统之间的路由选择协议EGP" class="headerlink" title="自洽系统之间的路由选择协议EGP"></a>自洽系统之间的路由选择协议EGP</h3><p>BGP属于EGP</p>
+</li>
+</ul>
+<h1 id="第五章：传输层"><a href="#第五章：传输层" class="headerlink" title="第五章：传输层"></a>第五章：传输层</h1><h2 id="NO-1-4"><a href="#NO-1-4" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h3><p>运输层从IP层收到发送给各应用进程的数据后，必须分别交付指明的各应用进程，这时使用16位的</p>
+<p>端口号</p>
+<p>来赋予进程标志</p>
+</li>
+<li><h3 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h3><p>TCP连接的断电叫做</p>
+<p>套接字（socket）</p>
+<p>或</p>
+<p>插口</p>
+<p>套接字 socket = （IP地址：端口号）</p>
+</li>
+</ul>
+<h2 id="NO-2-4"><a href="#NO-2-4" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="服务端使用的熟知端口号"><a href="#服务端使用的熟知端口号" class="headerlink" title="服务端使用的熟知端口号"></a>服务端使用的熟知端口号</h3><p>FTP: 21</p>
+<p>HTTP:80</p>
+<p>TFTP: 69</p>
+<p>SMTP: 25</p>
+<p>TELNET:23</p>
+<p>POP: 120</p>
+</li>
+</ul>
+<h2 id="NO-3-4"><a href="#NO-3-4" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li><h3 id="TCP报文段首部格式"><a href="#TCP报文段首部格式" class="headerlink" title="TCP报文段首部格式"></a>TCP报文段首部格式</h3><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180615121029018.png" alt="img"></p>
+<ul>
+<li><h4 id="序号（4B）"><a href="#序号（4B）" class="headerlink" title="序号（4B）"></a>序号（4B）</h4><p>TCP连接中的每一个</p>
+<p>字节</p>
+<p>都按顺序编号，首部中的序号的本报文段发送数据的第一个字节的序号</p>
+</li>
+<li><h4 id="确认号（4B）"><a href="#确认号（4B）" class="headerlink" title="确认号（4B）"></a>确认号（4B）</h4><p>期望收到对方下一个报文段的第一个数据字节的序号</p>
+<p>若确认号=N，则到序号N-1为止的所有数据都已正确收到</p>
+</li>
+<li><h4 id="确认-ACK"><a href="#确认-ACK" class="headerlink" title="确认 ACK"></a>确认 ACK</h4><p>ACK=1时确认号字段才有效</p>
+<p>TCP规定，在连接建立后所有传送的报文段都必须把ACK置1</p>
+</li>
+<li><h4 id="同步-SYN"><a href="#同步-SYN" class="headerlink" title="同步 SYN"></a>同步 SYN</h4><p>在连接时用来同步序号</p>
+<p>若SYN=1而ACK=0，表示这是一个请求连接报文</p>
+<p>若SYN=1且ACK=1，表示同意连接</p>
+</li>
+<li><h4 id="终止-FIN"><a href="#终止-FIN" class="headerlink" title="终止 FIN"></a>终止 FIN</h4><p>FIN=1时，要求释放连接</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-4-4"><a href="#NO-4-4" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="UDP协议的特点"><a href="#UDP协议的特点" class="headerlink" title="UDP协议的特点"></a>UDP协议的特点</h3><ol>
+<li>UDP是无连接的</li>
+<li>UDP使用尽最大努力交付</li>
+<li>UDP是面向报文的</li>
+<li>UDP没有拥塞控制</li>
+<li>UDP支持一对一、一对多、多对一和多对多的交互通信</li>
+<li>UDP的首部开销小</li>
+</ol>
+</li>
+<li><h3 id="TCP协议的特点"><a href="#TCP协议的特点" class="headerlink" title="TCP协议的特点"></a>TCP协议的特点</h3><ol>
+<li>TCP是面向连接的运输层协议</li>
+<li>每一条TCP连接只能有两个端点，每一条TCP连接只能是点对点（一对一）的</li>
+<li>TCP提供可靠交付的服务</li>
+<li>TCP提供全双工通信</li>
+<li>面向字节流</li>
+</ol>
+</li>
+</ul>
+<h2 id="NO-5-4"><a href="#NO-5-4" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="TCP中的差错控制"><a href="#TCP中的差错控制" class="headerlink" title="TCP中的差错控制"></a>TCP中的差错控制</h3><ul>
+<li><h4 id="停止等待协议"><a href="#停止等待协议" class="headerlink" title="停止等待协议:"></a>停止等待协议:</h4><p>即发送窗口WS=1，接收窗口WR=1，当收到确认后再发送下一个报文</p>
+<ul>
+<li><h5 id="停等协议中的确认丢失或迟到"><a href="#停等协议中的确认丢失或迟到" class="headerlink" title="停等协议中的确认丢失或迟到"></a>停等协议中的确认丢失或迟到</h5><p>接收方收到重传的分组时：</p>
+</li>
+</ul>
+<ol>
+<li>丢弃这个重复的分组</li>
+<li>向A发送确认<br>注意：1）这两种协议对出错和失序的报文，接收端不做响应，发送方确认等待超时进行</li>
+</ol>
+</li>
+<li><h4 id="连续ARQ的累计确认技术"><a href="#连续ARQ的累计确认技术" class="headerlink" title="连续ARQ的累计确认技术"></a>连续ARQ的累计确认技术</h4><p>接收方不必对收到的分组逐个发送确认，而是在收到几个分组后，对按序到达的最后一个分组发送确认</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-6-4"><a href="#NO-6-4" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="报文往返时间RTT的计算"><a href="#报文往返时间RTT的计算" class="headerlink" title="报文往返时间RTT的计算"></a>报文往返时间RTT的计算</h3><p>新的RTTs = (1-α)×旧的RTTs+α×新的RTT样本</p>
+<p>α=1/8</p>
+<p>超时重传时间RTO=RTTs+4·RTTd</p>
+<p>新的RTTd=（1-β）·旧的RTTd+β·|RTTs-新的RTT样本|</p>
+<p>β=1/4</p>
+</li>
+</ul>
+<h2 id="NO-7-4"><a href="#NO-7-4" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="TCP的拥塞控制"><a href="#TCP的拥塞控制" class="headerlink" title="TCP的拥塞控制"></a>TCP的拥塞控制</h3><p>TCP拥塞窗口单位实际上为字节数，这里假定使用报文个数</p>
+<ul>
+<li><h4 id="慢开始"><a href="#慢开始" class="headerlink" title="慢开始"></a>慢开始</h4><ul>
+<li><p>初始拥塞窗口cwnd=2或4个发送方的最大报文段SMSS的数值</p>
+</li>
+<li><p>每收到一个对新报文段的确认后，可以把cwnd增加最多一个SMSS的数值<br>Δcwnd = min（N，SMSS）</p>
+</li>
+<li><p>每经过一个<strong>传输轮次</strong>，cwnd就加倍（cwnd=1/2/4/8/……）</p>
+</li>
+<li><p>为防止cwnd增长过快，设置了一个</p>
+<p>慢开始门限ssthresh</p>
+<ul>
+<li>cwnd&lt;ssthresh时，使用慢开始算法</li>
+<li>cwnd&gt;ssthresh时，使用拥塞避免算法</li>
+<li>cwnd=ssthresh时，两者皆可使用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="拥塞避免"><a href="#拥塞避免" class="headerlink" title="拥塞避免"></a>拥塞避免</h4><ul>
+<li>拥塞避免阶段cwnd呈<strong>加法增大</strong>，按线性规律缓慢增长</li>
+<li>出现超时时，发送方判断为网络拥塞，调整ssthresh=cwnd/2，同时设置cwnd=1，进入慢开始阶段</li>
+</ul>
+</li>
+<li><h4 id="快重传"><a href="#快重传" class="headerlink" title="快重传"></a>快重传</h4><ul>
+<li>快重传要求即使收到了失序的报文段也要立即发送确认</li>
+<li>发送方只要一连收到3个重复确认，就立即进行重传，同时使用快恢复</li>
+</ul>
+</li>
+<li><h4 id="快恢复"><a href="#快恢复" class="headerlink" title="快恢复"></a>快恢复</h4><ul>
+<li>ssthresh=cwnd/2</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-8-1"><a href="#NO-8-1" class="headerlink" title="NO.8"></a>NO.8</h2><ul>
+<li><h3 id="TCP连接管理"><a href="#TCP连接管理" class="headerlink" title="TCP连接管理"></a>TCP连接管理</h3><ul>
+<li><h4 id="建立连接"><a href="#建立连接" class="headerlink" title="建立连接"></a>建立连接</h4><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180615122917829.png" alt="img"></p>
+</li>
+<li><h4 id="连接释放"><a href="#连接释放" class="headerlink" title="连接释放"></a>连接释放</h4><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180615123115000.png" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="第六章：应用层"><a href="#第六章：应用层" class="headerlink" title="第六章：应用层"></a>第六章：应用层</h1><h2 id="NO-1-5"><a href="#NO-1-5" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="常见的应用层协议"><a href="#常见的应用层协议" class="headerlink" title="常见的应用层协议"></a>常见的应用层协议</h3><ul>
+<li><h4 id="域名系统DNS"><a href="#域名系统DNS" class="headerlink" title="域名系统DNS"></a>域名系统DNS</h4></li>
+<li><h4 id="文件传输协议FTP"><a href="#文件传输协议FTP" class="headerlink" title="文件传输协议FTP"></a>文件传输协议FTP</h4></li>
+<li><h4 id="简单文件传输协议TFTP"><a href="#简单文件传输协议TFTP" class="headerlink" title="简单文件传输协议TFTP"></a>简单文件传输协议TFTP</h4></li>
+<li><h4 id="简单邮件传输协议SMTP"><a href="#简单邮件传输协议SMTP" class="headerlink" title="简单邮件传输协议SMTP"></a>简单邮件传输协议SMTP</h4></li>
+<li><h4 id="邮件读取协议POP"><a href="#邮件读取协议POP" class="headerlink" title="邮件读取协议POP"></a>邮件读取协议POP</h4></li>
+<li><h4 id="超文本传输协议HTTP"><a href="#超文本传输协议HTTP" class="headerlink" title="超文本传输协议HTTP"></a>超文本传输协议HTTP</h4></li>
+<li><h4 id="动态主机配置协议DHCP"><a href="#动态主机配置协议DHCP" class="headerlink" title="动态主机配置协议DHCP"></a>动态主机配置协议DHCP</h4></li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-2-5"><a href="#NO-2-5" class="headerlink" title="NO.2"></a>NO.2</h2><p>TFTP和DHCP在传输层上使用了UDP协议<br>DNS，FTP，SMTP，POP，HTTP在传输层上采用TCP连接</p>
+<h2 id="NO-3-5"><a href="#NO-3-5" class="headerlink" title="NO.3"></a>NO.3</h2><p>应用层协议都是基于客户/服务器方式运行的</p>
+<h2 id="NO-4-5"><a href="#NO-4-5" class="headerlink" title="NO.4"></a>NO.4</h2><p>用户代理发送邮件收发时，用户代理与发送方邮件服务器是用SMTP协议，发送方邮件服务器和接收方邮件服务器也是用SMTP协议，而收信时用户代理和接收方邮件服务器是POP协议</p>
+<h2 id="NO-5-5"><a href="#NO-5-5" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><p><img src="https://soporbear.github.io/2018/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E9%87%8D%E7%82%B9/20180615090204660.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="NO-6-5"><a href="#NO-6-5" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="URL的含义"><a href="#URL的含义" class="headerlink" title="URL的含义"></a>URL的含义</h3><p>统一定位资源符URL</p>
+<p>的格式：</p>
+<p>&lt;协议&gt;：//&lt;主机&gt;：&lt;端口&gt;/&lt;路径&gt;</p>
+</li>
+</ul>
+<h1 id="第七章：网络安全"><a href="#第七章：网络安全" class="headerlink" title="第七章：网络安全"></a>第七章：网络安全</h1><h2 id="NO-1-6"><a href="#NO-1-6" class="headerlink" title="NO.1"></a>NO.1</h2><p>被动攻击：截获<br>主动攻击：篡改、伪造身份、拒绝服务</p>
+<h2 id="NO-2-6"><a href="#NO-2-6" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="对称秘钥体系：DES"><a href="#对称秘钥体系：DES" class="headerlink" title="对称秘钥体系：DES"></a>对称秘钥体系：DES</h3><p>DES：秘钥是保密的，算法是公开的；加密和解密采用同样的秘钥K1=K2=K，Dk(Ek(x))=x</p>
+</li>
+<li><h3 id="公开秘钥体系：RSA"><a href="#公开秘钥体系：RSA" class="headerlink" title="公开秘钥体系：RSA"></a>公开秘钥体系：RSA</h3><p>RSA中加密秘钥pk是公开的，而解密秘钥sk是需要保密的，加解密算法E,D也是公开的</p>
+<p>注意：Dpk(Epk(x))≠x, 但是</p>
+<p>Dsk(Epk(x))=x 以及 Epk(Dsk(x))=x，</p>
+<p>其中Epk(Dsk(x))=x这个原则用在数字签名上</p>
+</li>
+</ul>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-C%E5%A4%8D%E4%B9%A0/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-C%E5%A4%8D%E4%B9%A0/";
+            const title         = "「计算机网络[C复习」";
+            const excerpt       = `**Lilin**
+ 首页  标签  分类  归档
+计算机网络-重点复习 2018-06-07 | 计算机网络
+第一章：概论NO.1
+OSI/RM国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a>, <a class="tag-none-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2020-11-26</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 物联网复习" href="/2020/11/26/物联网复习/">&lt; 上一篇</a>
+                </div>
+                
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center"></p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+
+                
+                    
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 0.8em;">复习</a> <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 0.6em;">物联网</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 0.6em;">经济学</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.6em;">论文</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/" style="font-size: 0.6em;">马克思主义</a>
+      </div>
+  </aside>
+
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-C%E5%A4%8D%E4%B9%A0/"><i class="fa  fa-book"></i> 计算机网络[C复习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/26/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/"><i class="fa  fa-book"></i> 物联网复习</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/22/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E6%B5%8E%E5%AD%A6/"><i class="fa  fa-book"></i> 工程经济学</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/11/22/%E9%A9%AC%E5%8E%9F%E8%AE%BA%E6%96%87/"><i class="fa  fa-book"></i> 马原论文</a>
+            
+          
+        
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/无"><i class="fa fa-telegram"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://twitter.com/无"><i class="fa fa-twitter"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/liao110"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2020 Sakura 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://skybox2.gitee.io" target="_blank" rel="nofollow">sky</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <div id="aplayer"></div>
+<script>
+$.ajax({
+    type:"get",
+    url:"https://api.lcy.moe/aplayer.php?p=netease&m=ap&t=playlist&id=1501563770",
+    dataType:"json",
+    success: function(data){
+        new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: true,
+            order: 'random',
+            lrcType: 3,
+            audio: data
+        });
+    }
+});
+</script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>
