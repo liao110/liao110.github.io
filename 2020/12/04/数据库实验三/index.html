@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/tou.webp">
+  <title>数据库实验三 | 清风逝</title>
+  <meta name="author" content="Sakura" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="sql, 复习, 数据库, 游标与异常处理, 笔记" />
+  
+  <meta name="description" content="游标的异常处理  用显式游标输出emp表的所有信息。 123456789create or replace procedure obj3_1asdeclare 	cursor obj3_1 is select * from emp;begin	for a in obj3_1 loop		dbms_output.put_line(a.empno||&amp;#x27;,&amp;#x27;||a.ename);	e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库实验三">
+<meta property="og:url" content="http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89/index.html">
+<meta property="og:site_name" content="清风逝">
+<meta property="og:description" content="游标的异常处理  用显式游标输出emp表的所有信息。 123456789create or replace procedure obj3_1asdeclare 	cursor obj3_1 is select * from emp;begin	for a in obj3_1 loop		dbms_output.put_line(a.empno||&amp;#x27;,&amp;#x27;||a.ename);	e">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/tou.webp">
+<meta property="article:published_time" content="2020-12-04T13:35:29.000Z">
+<meta property="article:modified_time" content="2020-12-05T08:08:17.016Z">
+<meta property="article:author" content="Sakura">
+<meta property="article:tag" content="复习">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="游标与异常处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/tou.webp">
+<meta name="twitter:site" content="@无">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">清风逝</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://candinya.com">作者博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/liao110">项目链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>清风逝</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">数据库实验三</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2020-12-04
+                        <i class="fa fa-folder"></i> 分类于 
+                        <i class="fa fa-user"></i> 作者 Sakura
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~3.61K
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                <hr />
+                <h2 id="游标的异常处理"><a href="#游标的异常处理" class="headerlink" title="游标的异常处理"></a>游标的异常处理</h2><hr>
+<ol>
+<li><p>用显式游标输出emp表的所有信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> obj3_1</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">declare</span> </span><br><span class="line">	<span class="keyword">cursor</span> obj3_1 <span class="keyword">is</span> <span class="keyword">select</span> * <span class="keyword">from</span> emp;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">for</span> a <span class="keyword">in</span> obj3_1 <span class="keyword">loop</span></span><br><span class="line">		dbms_output.put_line(a.empno||<span class="string">&#x27;,&#x27;</span>||a.ename);</span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用隐式游标输出dept表的所有信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> obj3_2</span><br><span class="line"><span class="keyword">as</span> <span class="keyword">begin</span></span><br><span class="line"><span class="keyword">declare</span> </span><br><span class="line">v dept%rowtype;</span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">select</span> * <span class="keyword">into</span> v <span class="keyword">from</span> dept;</span><br><span class="line">	if sql%found then</span><br><span class="line">dbms_output.put_line(v.DEPTNO||&#x27;,&#x27;||v.DNAME||&#x27;,&#x27;||v.CID||&#x27;,&#x27;||v.LOC||&#x27;,&#x27;||v.EMPS||&#x27;,&#x27;||v.INCOME);</span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">	<span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用游标，修改员工工资。根据job不同，为员工增加相应的sal：</p>
+<p>Job     raise<br>clerk    +500<br>salesman +750<br>analyst  +1000<br>otherwise +2000</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> obj3_3</span><br><span class="line"><span class="keyword">as</span> <span class="keyword">begin</span></span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">	<span class="keyword">cursor</span> obj3_3 <span class="keyword">is</span> <span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">for</span> <span class="keyword">update</span>;</span><br><span class="line">    a emp.sal%type;</span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">for</span> a <span class="keyword">in</span> obj3_3 <span class="keyword">loop</span></span><br><span class="line">			<span class="keyword">case</span>(a.job)</span><br><span class="line">				<span class="keyword">when</span> <span class="string">&#x27;clerk&#x27;</span> a:=<span class="number">500</span>;</span><br><span class="line">				when &#x27;salesman&#x27; a:=750;</span><br><span class="line">				when &#x27;analyst&#x27; a:=1000;</span><br><span class="line">				else a:=2000;</span><br><span class="line">			<span class="keyword">end</span> <span class="keyword">case</span>;</span><br><span class="line">			<span class="keyword">update</span> emp <span class="keyword">set</span> sal=sal+a <span class="keyword">where</span> job=a.job;</span><br><span class="line">			<span class="comment">--update emp set sal=sal+a where current of obj3_3;</span></span><br><span class="line">			<span class="comment">--current of 游标用于更新删除的操作，需要前面定义为for update</span></span><br><span class="line">		<span class="keyword">end</span> <span class="keyword">loop</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用显式游标输出指定学年欠费的学生名单（含姓名、专业、欠费金额）。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> obj3_4 (ye 收费表.学年%<span class="keyword">type</span>) <span class="keyword">as</span></span><br><span class="line">	<span class="keyword">cursor</span> obj3_4 <span class="keyword">is</span> <span class="keyword">select</span> 姓名,专业,应交学费,已交学费 <span class="keyword">from</span> 收费表 <span class="keyword">natural</span> <span class="keyword">join</span> 学生 <span class="keyword">where</span> 学年=ye <span class="keyword">and</span> 应交学费&gt;已交学费;</span><br><span class="line">	a 学生.姓名%type;</span><br><span class="line">	b 学生.专业%type;</span><br><span class="line">	c 收费表.应交学费%type;</span><br><span class="line">	d 收费表.应交学费%type;</span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">open</span> obj3_4;</span><br><span class="line">		loop</span><br><span class="line">			fetch obj3_4 into a,b,c,d;</span><br><span class="line">			exit when obj3_4%notfound loop</span><br><span class="line">			dbms_output.put_line(a || chr(9) || b || chr(9) || to_char(c-d,&#x27;99999&#x27;));</span><br><span class="line">		<span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line">		close obj3_4;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有针对性地给“实验二”实验项目中的过程与函数增加异常处理部分，保留原来的过程与函数，修改后的过程与函数另外保存，如obj2_1、obj2_2、…、obj2_13依次另存为obj3_11、obj3_12、…、obj2_23。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--(1) 输出名为SMITH的雇员的工资和职位。(存储过程)</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> obj3_11 <span class="keyword">as</span></span><br><span class="line">   v_sal <span class="built_in">number</span>(<span class="number">7</span>,<span class="number">2</span>);</span><br><span class="line">   v_job varchar2(100);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">select</span> sal,job</span><br><span class="line">       <span class="keyword">into</span> v_sal,v_job</span><br><span class="line">       <span class="keyword">from</span> emp</span><br><span class="line">       <span class="keyword">where</span> ename=<span class="string">&#x27;smith&#x27;</span>;</span><br><span class="line">  EXCEPTION   </span><br><span class="line">   WHEN NO_DATA_FOUND THEN </span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(&#x27;数据库中没有编码为&#x27;||&#x27;smith&#x27;||&#x27;的员工&#x27;);</span><br><span class="line">  WHEN TOO_MANY_ROWS THEN</span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(&#x27;程序运行错误!&#x27;);</span><br><span class="line">  WHEN OTHERS THEN</span><br><span class="line">  dbms_output.put_line(v_job||&#x27; &#x27;||v_sal);  </span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="comment">--SQLCode：数据库操作的返回码，其中0表示成功；-1表示失败；100表示没有检索到数据；+1表示用户自定义异常。</span></span><br><span class="line"><span class="comment">--sqlerrm函数 sqlerrm函数返回指定错误代码的错误信息。</span></span><br><span class="line"><span class="comment">-----------------------------------------------------------</span></span><br><span class="line"><span class="comment">--(2)传送参数部门编号，输出该部门名和地理位置。(存储过程)</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> obj3_12(a dept.deptno%<span class="keyword">type</span>) <span class="keyword">as</span></span><br><span class="line">c dept.name%<span class="keyword">type</span>;</span><br><span class="line">d dept.loc%type;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>,loc <span class="keyword">into</span> c,d <span class="keyword">from</span> dept <span class="keyword">where</span> deptno=a;</span><br><span class="line">dbms_output.put_line(c||&#x27;|&#x27;||d);</span><br><span class="line"> EXCEPTION</span><br><span class="line">when not_date_found then<span class="comment">--select语句没有查出数据</span></span><br><span class="line"> DBMS_OUTPUT.PUT_LINE(&#x27;数据库中没有编码为&#x27;||a||&#x27;的部门&#x27;);</span><br><span class="line"> when too_many_rows then<span class="comment">--语句匹配了多个行</span></span><br><span class="line"> DBMS_OUTPUT.PUT_LINE(&#x27;程序运行错误!请使用游标&#x27;);</span><br><span class="line"> when others then</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(SQLCODE||&#x27;<span class="comment">---&#x27;||SQLERRM);</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">----------------------------------------------------------</span></span><br><span class="line"><span class="comment">--(3)传送参数雇员号，输出该雇员的工资和提成，没有提成的用0替代。（用%type实现）。(存储过程)</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> obj3_13(v_empno emp.empno%<span class="keyword">type</span>)</span><br><span class="line"><span class="keyword">as</span>  v_sal emp.empno%<span class="keyword">type</span>;</span><br><span class="line">    v_comm emp.comm%type;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">select</span> sal,nvl(comm,<span class="number">0</span>)</span><br><span class="line">      <span class="keyword">into</span> v_sal,v_comm</span><br><span class="line">      <span class="keyword">from</span> emp</span><br><span class="line">      <span class="keyword">where</span> empno=v_empno;</span><br><span class="line">   dbms_output.put_line(v_sal||&#x27; &#x27;||v_comm);</span><br><span class="line">  EXCEPTION</span><br><span class="line">  WHEN NO_DATA_FOUND THEN </span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(&#x27;数据库中没有编码为&#x27;||v_empno||&#x27;的雇员&#x27;);</span><br><span class="line">  WHEN TOO_MANY_ROWS THEN</span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(&#x27;程序运行错误!请使用游标&#x27;);</span><br><span class="line">  WHEN OTHERS THEN</span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(SQLCODE||&#x27;<span class="comment">---&#x27;||SQLERRM);</span></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="comment">-----------------------------.......</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>之后的太多而且都差不多，所以就不写了。。。</p>
+</li>
+</ol>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89/";
+            const title         = "「数据库实验三」";
+            const excerpt       = `游标的异常处理
+
+用显式游标输出emp表的所有信息。
+123456789create or replace procedure obj3_1asdeclare 	cursor obj3_1 is select * from emp;b...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/sql/" rel="tag">sql</a>, <a class="tag-none-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a>, <a class="tag-none-link" href="/tags/%E6%B8%B8%E6%A0%87%E4%B8%8E%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="tag">游标与异常处理</a>, <a class="tag-none-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2020-12-05</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" 数据库实验二" href="/2020/12/04/数据库实验二/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 数据库实验四" href="/2020/12/05/数据库实验四/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center"></p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+
+                
+                    
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/PL-SQL%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%801/" style="font-size: 0.6em;">PL/SQL程序基础1</a> <a href="/tags/sql/" style="font-size: 0.67em;">sql</a> <a href="/tags/web/" style="font-size: 0.6em;">web</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 0.8em;">复习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.67em;">数据库</a> <a href="/tags/%E6%B8%B8%E6%A0%87%E4%B8%8E%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 0.6em;">游标与异常处理</a> <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 0.6em;">物联网</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.73em;">笔记</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 0.6em;">经济学</a> <a href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 0.6em;">触发器</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.6em;">论文</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/" style="font-size: 0.6em;">马克思主义</a>
+      </div>
+  </aside>
+
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/06/%E8%A7%A6%E5%8F%91%E5%99%A8%E5%AE%9E%E9%AA%8C/"><i class="fa  fa-book"></i> 触发器实验</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/"><i class="fa  fa-book"></i> 数据库实验四</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89/"><i class="fa  fa-book"></i> 数据库实验三</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/"><i class="fa  fa-book"></i> 数据库实验二</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/"><i class="fa  fa-book"></i> 数据库实验一</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/无"><i class="fa fa-telegram"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://twitter.com/无"><i class="fa fa-twitter"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/liao110"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2020 Sakura 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://skybox2.gitee.io" target="_blank" rel="nofollow">sky</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <div id="aplayer"></div>
+<script>
+$.ajax({
+    type:"get",
+    url:"https://api.lcy.moe/aplayer.php?p=netease&m=ap&t=playlist&id=1501563770",
+    dataType:"json",
+    success: function(data){
+        new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: true,
+            order: 'random',
+            lrcType: 3,
+            audio: data
+        });
+    }
+});
+</script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>

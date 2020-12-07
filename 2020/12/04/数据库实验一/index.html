@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/tou.webp">
+  <title>数据库实验一 | 清风逝</title>
+  <meta name="author" content="Sakura" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="" />
+  
+  <meta name="description" content="模式对象和用户权限管理 1. 索引，写出相应的SQL命令 创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样) 1234567create table student1(学号 varchar2(4) not null,--默认为type 姓名 varchar2(4 char) not null, 专业 varchar2(1 char) n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库实验一">
+<meta property="og:url" content="http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/index.html">
+<meta property="og:site_name" content="清风逝">
+<meta property="og:description" content="模式对象和用户权限管理 1. 索引，写出相应的SQL命令 创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样) 1234567create table student1(学号 varchar2(4) not null,--默认为type 姓名 varchar2(4 char) not null, 专业 varchar2(1 char) n">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/tou.webp">
+<meta property="article:published_time" content="2020-12-04T07:36:06.000Z">
+<meta property="article:modified_time" content="2020-12-04T12:33:38.001Z">
+<meta property="article:author" content="Sakura">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/tou.webp">
+<meta name="twitter:site" content="@无">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+            <header id="kratos-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <div class="color-logo"><a href="/">清风逝</a></div>
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://candinya.com">作者博客</a></li>
+                                                    
+                                                
+                                                    
+                                                        <li><a target="_blank" rel="noopener" href="https://github.com/liao110">项目链接</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>清风逝</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div class="row">
+                    
+        <div id="main">
+            <section class="col-md-8">
+    <article>
+        <div class="kratos-hentry kratos-post-inner clearfix">
+            <header class="kratos-entry-header">
+                <h1 class="kratos-entry-title text-center">数据库实验一</h1>
+                
+                <div class="kratos-post-meta text-center">
+                    <span>
+                        <i class="fa fa-calendar"></i> 2020-12-04
+                        <i class="fa fa-folder"></i> 分类于 
+                        <i class="fa fa-user"></i> 作者 Sakura
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~4.17K
+                        
+                        字
+                        
+                    </span>
+                </div>
+            </header>
+            <div class="kratos-post-content">
+                
+                <hr />
+                <h2 id="模式对象和用户权限管理"><a href="#模式对象和用户权限管理" class="headerlink" title="模式对象和用户权限管理"></a>模式对象和用户权限管理</h2><hr>
+<h4 id="1-索引，写出相应的SQL命令"><a href="#1-索引，写出相应的SQL命令" class="headerlink" title="1. 索引，写出相应的SQL命令"></a>1. 索引，写出相应的SQL命令</h4><ol>
+<li><p>创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student1</span><br><span class="line">(学号 <span class="built_in">varchar2</span>(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span>,<span class="comment">--默认为type</span></span><br><span class="line"> 姓名 <span class="built_in">varchar2</span>(<span class="number">4</span> <span class="built_in">char</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line"> 专业 <span class="built_in">varchar2</span>(<span class="number">1</span> <span class="built_in">char</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">注册日期 <span class="built_in">date</span>,</span><br><span class="line">状态 <span class="built_in">varchar2</span>(<span class="number">8</span>),</span><br><span class="line">Primary <span class="keyword">key</span>(学号));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为studen1表的姓名创建索引obj1_1</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> obj1_1 <span class="keyword">on</span> student1(姓名);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为表中的注册日期创建降序索引为obj1_2，性别创建位图索引 student_gender_index ， “性别”与“姓名”创建组合索引，索引名为“obj1_3” </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> obj1_2 <span class="keyword">on</span> student1(注册日期 <span class="keyword">desc</span>);</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> student_gender_index  <span class="keyword">on</span> student1(性别);</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> obj1_3 <span class="keyword">on</span> student1(姓名,性别);</span><br></pre></td></tr></table></figure>
+
+<p>查看索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_indexes <span class="keyword">where</span> table_name=<span class="string">&#x27;student1&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_ind_columns <span class="keyword">where</span> table_name=<span class="string">&#x27;student1&#x27;</span>;</span><br><span class="line"><span class="comment">--删除索引</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> student_gender_index;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="2-同义词，写出相应的sql命令"><a href="#2-同义词，写出相应的sql命令" class="headerlink" title="2. 同义词，写出相应的sql命令"></a>2. 同义词，写出相应的sql命令</h4><ol>
+<li><p>创建student1表、 obj1_3 、 obj1_5 的同义词，名为obj1_4、 obj1_5 、 st1。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span>  <span class="keyword">synonym</span> obj1_4 <span class="keyword">from</span> student;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">synonym</span> obj1_5 <span class="keyword">from</span> obj1_3;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">synonym</span> stl <span class="keyword">from</span> obj1_5;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建某Oracle对象的公共同义词，公共同义词的命名规则：字符串“obj1_”后面跟上你的学号。（Oracle对象任意，在自己的计算机上完成）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">public</span> <span class="keyword">synonym</span> obj1_201805660111 <span class="keyword">for</span> scott.emp;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看同义词</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> synonym_name,table_name,table_over <span class="keyword">from</span> user_syonoym;</span><br><span class="line"><span class="comment">--删除同义词</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">synonym</span> stl;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="3-序列，写出相应的sql命令"><a href="#3-序列，写出相应的sql命令" class="headerlink" title="3. 序列，写出相应的sql命令"></a>3. 序列，写出相应的sql命令</h4><ol>
+<li><p>序列基本语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">sequence</span>  序列名称</span><br><span class="line"><span class="keyword">start</span> <span class="keyword">with</span> 从几开始</span><br><span class="line"><span class="keyword">increment</span> <span class="keyword">by</span> 每次增长多少</span><br><span class="line">[maxvalue 最大值] | <span class="keyword">nomaxvalue</span></span><br><span class="line">[<span class="keyword">minvalue</span> 最小值] | <span class="keyword">nominvalue</span></span><br><span class="line"><span class="keyword">cycle</span> | <span class="keyword">nocycle</span> <span class="comment">--是否自动循环</span></span><br><span class="line">[<span class="keyword">cache</span> 缓存数量] | nocathe;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建序列，该序列起始值50，步长为10，不缓冲，序列名为“obj1_6”。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">sequence</span> obj1_6</span><br><span class="line"><span class="keyword">start</span> <span class="keyword">with</span> <span class="number">50</span></span><br><span class="line"><span class="keyword">increment</span> <span class="keyword">by</span> <span class="number">10</span></span><br><span class="line">nocache;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建序列，该序列最大值无限制，最小值为1，步长为1，序列名为“obj1_7”。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">sequence</span> obj1_7</span><br><span class="line"><span class="keyword">start</span> <span class="keyword">with</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">increment</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">nomaxvalue</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建序列，该序列起始值为1000，步长为2，最大值为10000，不可循环，序列名为“seq_1”。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">craete sequence seq_1</span><br><span class="line"><span class="keyword">start</span> <span class="keyword">with</span> <span class="number">1000</span></span><br><span class="line"><span class="keyword">increment</span> <span class="keyword">by</span> <span class="number">2</span></span><br><span class="line">maxvalue <span class="number">10000</span></span><br><span class="line"><span class="keyword">nocycle</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看序列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span>  all_sequence <span class="keyword">where</span> sequence_owner=<span class="string">&#x27;A201805660111&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_sequence;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用序列:向DEPT表中插入三条记录，利用序列obj1_6生成部门编号。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> dept <span class="keyword">values</span>(obj1_6,<span class="keyword">nextval</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> dept <span class="keyword">values</span>(obj1_6,<span class="keyword">nextval</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> dept <span class="keyword">values</span>(obj1_6,<span class="keyword">nextval</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>,<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改序列: 修改序列“obj1_6”，将该序列最大值设为“82000”，最小值设为“10”，步长设为“5”。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">sequence</span> obj1_6</span><br><span class="line"> maxvalue <span class="number">82000</span></span><br><span class="line"> <span class="keyword">minvalue</span> <span class="number">10</span></span><br><span class="line"> <span class="keyword">increment</span> <span class="keyword">by</span> <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改序列:  修改序列“obj1_7”，将该序列最大值设为“1000”。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">sequence</span> obj1_7</span><br><span class="line"> maxvalue <span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除序列seq_1</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">sequence</span> seq_1;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="4-用户，写出相应的sql命令"><a href="#4-用户，写出相应的sql命令" class="headerlink" title="4. 用户，写出相应的sql命令"></a>4. 用户，写出相应的sql命令</h4><ol>
+<li><p>创建一个用户。注意：如果用户名的命名违背了公俗良序原则，将给予某些处罚。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> a indentify <span class="keyword">by</span> <span class="number">123456</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给用户一些权限</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>, <span class="keyword">resource</span> <span class="keyword">to</span> a;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">create</span> <span class="keyword">session</span> <span class="keyword">to</span> a;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新开一个会话，以新创建的用户身份连接并对scott中的emp表进行查询、删除操作。如果权限不够，则授予相应权限。最后，回滚事务.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>,<span class="keyword">delete</span> <span class="keyword">on</span> scott.emp <span class="keyword">to</span> a;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> scott.emp <span class="keyword">where</span> empno=<span class="number">7369</span>;</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> scott.emp <span class="keyword">where</span> empno=<span class="number">7369</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> scott.emp <span class="keyword">where</span> empno=<span class="number">7369</span>;</span><br><span class="line"><span class="keyword">rollback</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> scott.emp <span class="keyword">where</span> empno=<span class="number">7369</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改该用户的口令，然后用新口令重新连接。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> a <span class="keyword">identified</span> <span class="keyword">by</span> <span class="number">123</span>;</span><br><span class="line"><span class="comment">-- 封锁该用户的账号，然后解锁。</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> a <span class="keyword">account</span> <span class="keyword">lock</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> a <span class="keyword">account</span> <span class="keyword">unlock</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询用户和权限信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> dba_users;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_sys_privs;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_tab_privs;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> user_role_privs;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> session_privs;</span><br><span class="line"><span class="comment">--删除用户</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">user</span> a20170596429;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="5-视图，针对a-db模式中的表，创建视图，视图名依次命名为obj1-10、obj1-11、…"><a href="#5-视图，针对a-db模式中的表，创建视图，视图名依次命名为obj1-10、obj1-11、…" class="headerlink" title="5. 视图，针对a_db模式中的表，创建视图，视图名依次命名为obj1_10、obj1_11、…"></a>5. 视图，针对a_db模式中的表，创建视图，视图名依次命名为obj1_10、obj1_11、…</h4><ol>
+<li><p>对选修C13课程的学生，按分数跳跃式排名（可以并列），显示名次与学号，按名次、学号升序排列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--跳跃排序，以a，b为一组，组内再以b排序</span></span><br><span class="line"><span class="comment">--rank() over (PARTITION BY a,b order by a desc)</span></span><br><span class="line"><span class="comment">--连续排序，如果有两个1，则下一个为2</span></span><br><span class="line"><span class="comment">--dense_rank() over (PARTITION BY a,b order by a desc)</span></span><br><span class="line"><span class="comment">--顺序排序，及12345...</span></span><br><span class="line"><span class="comment">--row_number() over (PARTITION BY a,b order by a desc)</span></span><br><span class="line"><span class="keyword">select</span> 学号,课程号,分数,绩点,<span class="keyword">rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> nvl(<span class="string">&quot;分数&quot;</span>,<span class="number">0</span>) <span class="keyword">desc</span>) 名次 <span class="keyword">from</span> a_db.成绩 </span><br><span class="line"><span class="keyword">where</span> 课程号=<span class="string">&#x27;C13&#x27;</span> ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询每门课程考试成绩第一名(可以并列)的学生的学号与课程号，按课程号升序排列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 课程号,学号,分数,姓名 <span class="keyword">from</span> a_db.成绩 b</span><br><span class="line"><span class="keyword">natural</span> <span class="keyword">join</span> a_db.学生 a</span><br><span class="line"><span class="keyword">where</span> 分数 <span class="keyword">in</span>(<span class="keyword">select</span> <span class="keyword">max</span>(分数) <span class="keyword">from</span> a_db.成绩 </span><br><span class="line"><span class="keyword">natural</span> <span class="keyword">join</span> a_db.学生 <span class="keyword">where</span> 课程号=b.课程号) <span class="keyword">order</span> <span class="keyword">by</span> 课程号;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按平均分数对课程连续排名(可以并列)，显示名次、课程号与平均分数(保留2位小数)，按名次、课程号升序排列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 课程号,<span class="keyword">round</span>(<span class="keyword">avg</span>(分数),<span class="number">2</span>) 平均分,<span class="keyword">dense_rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">avg</span>(分数)) 名次 <span class="keyword">from</span> a_db.成绩 <span class="keyword">natural</span> <span class="keyword">join</span> a_db.课程</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 课程号;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询每门课程的课程号，以及每门课程考试成绩第一名（可以并列）的学生的姓名，按课程号与姓名升序排列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 课程号,姓名 <span class="keyword">from</span> a_db.成绩 b</span><br><span class="line"><span class="keyword">natural</span> <span class="keyword">join</span> a_db.学生 a </span><br><span class="line"><span class="keyword">where</span> 分数 <span class="keyword">in</span>(<span class="keyword">select</span> <span class="keyword">max</span>(分数) <span class="keyword">from</span> a_db.成绩 </span><br><span class="line"><span class="keyword">natural</span> <span class="keyword">join</span> a_db.学生 <span class="keyword">where</span> 课程号=b.课程号) <span class="keyword">order</span> <span class="keyword">by</span> 课程号,姓名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出工资在3500到5000之间的员工的姓名，但只取姓名的前5个字符，不足5个则以*补足，按姓名升序排列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> rpad(ename,<span class="number">5</span>,<span class="string">&#x27;*&#x27;</span>)<span class="keyword">as</span> 姓名 </span><br><span class="line">  <span class="keyword">from</span> a_db.emp <span class="keyword">where</span> sal <span class="keyword">between</span> <span class="number">3500</span> <span class="keyword">and</span> <span class="number">5000</span> </span><br><span class="line">  <span class="keyword">order</span> <span class="keyword">by</span> ename;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+
+            </div>
+            
+                <div class="kratos-copyright text-center clearfix">
+                    <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+                </div>
+            
+            <footer class="kratos-entry-footer clearfix">
+                
+                    <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                    
+                    
+                        <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                        <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/";
+            const title         = "「数据库实验一」";
+            const excerpt       = `模式对象和用户权限管理
+1. 索引，写出相应的SQL命令
+创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样)
+1234567create table student1(学号...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                    
+                    </div>
+                
+                <div class="footer-tag clearfix">
+                    <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                        
+                    </div>
+                    <div class="pull-date">
+                    <span>最后编辑：2020-12-04</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+            <nav class="navigation post-navigation clearfix" role="navigation">
+                
+                <div class="nav-previous clearfix">
+                    <a title=" tomcat" href="/2020/11/27/tomcat配置/">&lt; 上一篇</a>
+                </div>
+                
+                
+                <div class="nav-next clearfix">
+                    <a title=" 数据库实验二" href="/2020/12/04/数据库实验二/">下一篇 &gt;</a>
+                </div>
+                
+            </nav>
+        
+        
+    </article>
+</section>
+        </div>
+                
+            <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+                
+                    <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" />
+        </div>
+    </div>
+    <div class="textwidget">
+        
+            <p class="text-center"></p>
+        
+    </div>
+</aside>
+                
+                    <!-- Moved to about.ejs -->
+                
+                    
+
+                
+                    
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/PL-SQL%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%801/" style="font-size: 0.6em;">PL/SQL程序基础1</a> <a href="/tags/sql/" style="font-size: 0.67em;">sql</a> <a href="/tags/web/" style="font-size: 0.6em;">web</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 0.8em;">复习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.67em;">数据库</a> <a href="/tags/%E6%B8%B8%E6%A0%87%E4%B8%8E%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 0.6em;">游标与异常处理</a> <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 0.6em;">物联网</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.73em;">笔记</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 0.6em;">经济学</a> <a href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 0.6em;">触发器</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.6em;">论文</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/" style="font-size: 0.6em;">马克思主义</a>
+      </div>
+  </aside>
+
+                
+                    
+  <aside id="krw-posts" class="widget widget-kratos-poststab">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/06/%E8%A7%A6%E5%8F%91%E5%99%A8%E5%AE%9E%E9%AA%8C/"><i class="fa  fa-book"></i> 触发器实验</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/"><i class="fa  fa-book"></i> 数据库实验四</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89/"><i class="fa  fa-book"></i> 数据库实验三</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/"><i class="fa  fa-book"></i> 数据库实验二</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/"><i class="fa  fa-book"></i> 数据库实验一</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+                
+            </section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/无"><i class="fa fa-telegram"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://twitter.com/无"><i class="fa fa-twitter"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/liao110"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2020 Sakura 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Made with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by <a href="https://skybox2.gitee.io" target="_blank" rel="nofollow">sky</a>.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async type="text/javascript" src="/js/snow.min.js"></script>
+    </div>
+
+<script async src="/js/candy.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <div id="aplayer"></div>
+<script>
+$.ajax({
+    type:"get",
+    url:"https://api.lcy.moe/aplayer.php?p=netease&m=ap&t=playlist&id=1501563770",
+    dataType:"json",
+    success: function(data){
+        new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: true,
+            order: 'random',
+            lrcType: 3,
+            audio: data
+        });
+    }
+});
+</script>
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+
+    </body>
+</html>

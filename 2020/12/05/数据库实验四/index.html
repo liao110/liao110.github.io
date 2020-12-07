@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/tou.webp">
-  <title>tomcat | 清风逝</title>
+  <title>数据库实验四 | 清风逝</title>
   <meta name="author" content="Sakura" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,21 +13,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="web, 笔记" />
+    <meta name="keywords" content="sql, 复习, 数据库, 笔记" />
   
-  <meta name="description" content="查看被占用的端口号：   1netstat -ano | findstr 8080    杀死占用的端口号  1taskkill &#x2F;pid 14188 &#x2F;f    idea tomcat配置细节  tomcat修改端口 浏览器验证的端口为8080，默认的，但有时候数据库会和它有冲突，就需要修改这个端口！  首先，找到你tomcat的安装位置 找到后，点击进去 有一个 conf文件夹 里面有一个">
+  <meta name="description" content="PL&#x2F;SQL程序基础2  在A_DB模式中有一个表tan1(a)，表中有若干个整数（不要管是否有重复）。请编写一个名为obj4_1 的存储函数（无参数），统计该表中有多少个数是素数，并作为函数返回值返回。 123456789101112131415161718192021222324--修改用户名,可以自己修改自己的密码alter user 用户名 identified by &quot;新密码&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tomcat">
-<meta property="og:url" content="http://example.com/2020/11/27/tomcat%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="数据库实验四">
+<meta property="og:url" content="http://example.com/2020/12/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/index.html">
 <meta property="og:site_name" content="清风逝">
-<meta property="og:description" content="查看被占用的端口号：   1netstat -ano | findstr 8080    杀死占用的端口号  1taskkill &#x2F;pid 14188 &#x2F;f    idea tomcat配置细节  tomcat修改端口 浏览器验证的端口为8080，默认的，但有时候数据库会和它有冲突，就需要修改这个端口！  首先，找到你tomcat的安装位置 找到后，点击进去 有一个 conf文件夹 里面有一个">
+<meta property="og:description" content="PL&#x2F;SQL程序基础2  在A_DB模式中有一个表tan1(a)，表中有若干个整数（不要管是否有重复）。请编写一个名为obj4_1 的存储函数（无参数），统计该表中有多少个数是素数，并作为函数返回值返回。 123456789101112131415161718192021222324--修改用户名,可以自己修改自己的密码alter user 用户名 identified by &quot;新密码&amp;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/tou.webp">
-<meta property="article:published_time" content="2020-11-27T06:42:23.000Z">
-<meta property="article:modified_time" content="2020-11-28T01:36:55.398Z">
+<meta property="article:published_time" content="2020-12-05T08:09:51.000Z">
+<meta property="article:modified_time" content="2020-12-05T15:08:27.105Z">
 <meta property="article:author" content="Sakura">
-<meta property="article:tag" content="web">
+<meta property="article:tag" content="复习">
 <meta property="article:tag" content="笔记">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/tou.webp">
 <meta name="twitter:site" content="@无">
@@ -130,17 +132,17 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">tomcat</h1>
+                <h1 class="kratos-entry-title text-center">数据库实验四</h1>
                 
                 <div class="kratos-post-meta text-center">
                     <span>
-                        <i class="fa fa-calendar"></i> 2020-11-27
+                        <i class="fa fa-calendar"></i> 2020-12-05
                         <i class="fa fa-folder"></i> 分类于 
                         <i class="fa fa-user"></i> 作者 Sakura
                         <i class="fa fa-edit"></i> 
                         
                         
-                            853
+                            ~2.07K
                         
                         字
                         
@@ -150,38 +152,22 @@
             <div class="kratos-post-content">
                 
                 <hr />
-                <ul>
-<li> 查看被占用的端口号： </li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr <span class="number">8080</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li> 杀死占用的端口号</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /pid <span class="number">14188</span> /f</span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Survivalist_Boy/article/details/103175493?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control">idea tomcat配置细节</a></p>
-<hr>
-<h4 id="tomcat修改端口"><a href="#tomcat修改端口" class="headerlink" title="tomcat修改端口"></a>tomcat修改端口</h4><ul>
-<li>浏览器验证的端口为8080，默认的，但有时候数据库会和它有冲突，就需要修改这个端口！</li>
-</ul>
-<p>首先，找到你<strong>tomcat的安装位置</strong></p>
-<p>找到后，点击进去 有一个 <strong>conf文件夹</strong></p>
-<p>里面有一个大宝贝 叫做 <strong>server.xml</strong></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">&quot;8080&quot;</span> <span class="attr">protocol</span>=<span class="string">&quot;HTTP/1.1&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">connectionTimeout</span>=<span class="string">&quot;20000&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">redirectPort</span>=<span class="string">&quot;8443&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>把这个8080改了就好！</p>
-<ul>
-<li>但是如果要装多个tomcat的话，还需要修改另外两个接口</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--第一个--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">&quot;18005&quot;</span> <span class="attr">shutdown</span>=<span class="string">&quot;SHUTDOWN&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Listener</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.catalina.startup.VersionLoggerListener&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--第二个--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">protocol</span>=<span class="string">&quot;AJP/1.3&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">address</span>=<span class="string">&quot;::1&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">port</span>=<span class="string">&quot;8009&quot;</span></span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">&quot;8443&quot;</span> /&gt;</span>   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+                <h2 id="PL-SQL程序基础2"><a href="#PL-SQL程序基础2" class="headerlink" title="PL/SQL程序基础2"></a>PL/SQL程序基础2</h2><hr>
 <ol>
-<li><strong>shutdown端口</strong> <strong>关闭tomcat通信接口</strong></li>
+<li><p>在A_DB模式中有一个表tan1(a)，表中有若干个整数（不要管是否有重复）。<br>请编写一个名为obj4_1 的存储函数（无参数），统计该表中有多少个数是素数，并作为函数返回值返回。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--修改用户名,可以自己修改自己的密码</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> 用户名 <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">&quot;新密码&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> preplace <span class="keyword">function</span> obj4_1 <span class="keyword">return</span> <span class="built_in">integer</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"> a <span class="built_in">int</span> :=<span class="number">0</span>;</span><br><span class="line"> f int :=0;</span><br><span class="line"> <span class="keyword">begin</span></span><br><span class="line"> <span class="keyword">for</span> e <span class="keyword">in</span> (<span class="keyword">select</span> * <span class="keyword">form</span> A_db.tanl) <span class="keyword">loop</span></span><br><span class="line"> 	<span class="keyword">for</span> b <span class="keyword">in</span> <span class="number">2.</span>.trunc(<span class="keyword">sqrt</span>(e.a)) <span class="keyword">loop</span></span><br><span class="line"> 		<span class="keyword">if</span> <span class="keyword">mod</span>(e.a,b)=<span class="number">0</span> <span class="keyword">then</span></span><br><span class="line"> 			f:=<span class="number">1</span>;</span><br><span class="line"> 			exit;</span><br><span class="line"> 		<span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"> 	<span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line"> 	</span><br><span class="line"> 	if f=0 then</span><br><span class="line"> 		a:=a+1;</span><br><span class="line"> 	<span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"> <span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line"> return a;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在A_DB模式中有一个表tan3(a)，表中有若干个整数（不要管是否有重复）,假设这些数表示年份。<br>请编写一个名为obj4_2的存储函数（无参数），统计该表中有多少个年份是闰年，并作为函数返回值返回。<br>说明：闰年的计算方法：被400整除，或被4整除而不能被100整除的年份为闰年。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> obj4_2 <span class="keyword">return</span> <span class="built_in">integer</span></span><br><span class="line"><span class="keyword">as</span> </span><br><span class="line">    m <span class="built_in">integer</span> :=<span class="number">0</span>;</span><br><span class="line">    is_t BOOLEAN;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> (<span class="keyword">select</span> * <span class="keyword">from</span> a_db.tan3) <span class="keyword">LOOP</span></span><br><span class="line">            is_t:=<span class="literal">false</span>;</span><br><span class="line">            if mod(e.a,4)=0 then</span><br><span class="line">                if mod(e.a,100)!=0 then</span><br><span class="line">                    is_t:=true;</span><br><span class="line">                <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">            <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">            if mod(e.a,400)=0 then</span><br><span class="line">                is_t:=true;</span><br><span class="line">            <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">            if is_t then</span><br><span class="line">                m:=m+1;</span><br><span class="line">            <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line">        return m;</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在A_DB模式中有一个表tanbn1(a,b)。<br>请编写一个名为obj4_3的存储函数（无参数），对于表中所有三位数abc,将个位与百位数字交换，得到cba，求这些cba的和，并作为函数返回值返回。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">REPLACE</span> <span class="keyword">function</span> obj4_3 <span class="keyword">return</span> <span class="built_in">integer</span></span><br><span class="line"><span class="keyword">as</span></span><br><span class="line">	a <span class="built_in">int</span> :=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">for</span> n <span class="keyword">in</span> (<span class="keyword">select</span> * <span class="keyword">from</span> a_db.tanbn1) <span class="keyword">loop</span></span><br><span class="line">			<span class="keyword">if</span> n.a&gt;<span class="number">100</span> <span class="keyword">and</span> n.a&lt;<span class="number">1000</span> <span class="keyword">then</span></span><br><span class="line">            a=a+trunc(n.a/<span class="number">100</span>)+<span class="keyword">mod</span>(trunc(n.a/<span class="number">10</span>),<span class="number">10</span>)*<span class="number">10</span>+<span class="keyword">mod</span>(n.a,<span class="number">10</span>)*<span class="number">100</span>;</span><br><span class="line">            <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">            if n.a&gt;100 and n.a&lt;1000 then</span><br><span class="line">            a=a+trunc(n.b/100)+mod(trunc(n.b/10),10)*10+mod(n.b,10)*100;</span><br><span class="line">            <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">loop</span>;</span><br><span class="line">   return a;</span><br><span class="line">   <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对称字符串。<br>在A_DB模式中有一个表tac1(a)，表中有若干个字符串（不要管是否有重复）。<br>请编写一个名为obj4_4的存储函数（无参数），统计该表中有多少对称字符串，并作为函数返回值返回。<br>说明：对称字符串是正读倒读一样的字符串。如：“abcdcba”、“6”和”123321”等前后对称，是对称字符串；而“12332”不是。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> obj4_4 <span class="keyword">return</span> <span class="built_in">integer</span> <span class="keyword">as</span></span><br><span class="line">a <span class="built_in">int</span> :=<span class="number">0</span>;</span><br><span class="line">b int :=0;</span><br><span class="line">c int :=0;</span><br><span class="line">d int :=0;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">for</span> <span class="keyword">len</span> <span class="keyword">in</span> (<span class="keyword">select</span> * <span class="keyword">from</span> adb.tac1) <span class="keyword">loop</span>;</span><br><span class="line">		a:=length(len.a);</span><br><span class="line">		c:=a;</span><br><span class="line">		while b&lt;(a/2)</span><br><span class="line">		<span class="keyword">begin</span></span><br><span class="line">			</span><br><span class="line">		<span class="keyword">end</span>;</span><br><span class="line">		</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<p>2)<strong>与其他http服务器通信接口</strong>，用于http服务器集合 </p>
 
             </div>
             
@@ -235,7 +221,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2020/11/27/tomcat%E9%85%8D%E7%BD%AE/",
+                text: "http://example.com/2020/12/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -247,24 +233,12 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2020/11/27/tomcat%E9%85%8D%E7%BD%AE/";
-            const title         = "「tomcat」";
-            const excerpt       = `
- 查看被占用的端口号： 
+            const hostUrl       = "http://example.com/2020/12/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/";
+            const title         = "「数据库实验四」";
+            const excerpt       = `PL/SQL程序基础2
 
-1netstat -ano | findstr 8080
-
-
- 杀死占用的端口号
-
-1taskkill /pid 14188 /f
-
-
-
-idea tomcat配置细节
-
-tomcat修改端口
-浏览器验证...`;
+在A_DB模式中有一个表tan1(a)，表中有若干个整数（不要管是否有重复）。请编写一个名为obj4_1 的存储函数（无参数），统计该表中有多少个数是素数，并作为函数返回值返回。
+12345678910111...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -283,10 +257,10 @@ tomcat修改端口
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        <a class="tag-none-link" href="/tags/web/" rel="tag">web</a>, <a class="tag-none-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+                        <a class="tag-none-link" href="/tags/sql/" rel="tag">sql</a>, <a class="tag-none-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a>, <a class="tag-none-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2020-11-28</span>
+                    <span>最后编辑：2020-12-05</span>
                     </div>
                 </div>
             </footer>
@@ -295,12 +269,12 @@ tomcat修改端口
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" 计算机网络[C复习" href="/2020/11/26/计算机网络-C复习/">&lt; 上一篇</a>
+                    <a title=" 数据库实验三" href="/2020/12/04/数据库实验三/">&lt; 上一篇</a>
                 </div>
                 
                 
                 <div class="nav-next clearfix">
-                    <a title=" 数据库实验一" href="/2020/12/04/数据库实验一/">下一篇 &gt;</a>
+                    <a title=" 触发器实验" href="/2020/12/06/触发器实验/">下一篇 &gt;</a>
                 </div>
                 
             </nav>
