@@ -13,19 +13,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="PL/SQL程序基础1, sql, 复习, 数据库, 笔记" />
   
-  <meta name="description" content="模式对象和用户权限管理 1. 索引，写出相应的SQL命令 创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样) 1234567create table student1(学号 varchar2(4) not null,--默认为type 姓名 varchar2(4 char) not null, 专业 varchar2(1 char) n">
+  <meta name="description" content="模式对象和用户权限管理 1. 索引，写出相应的SQL命 令 创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样) 1234567create table student1(学号 varchar2(4) not null,--默认为type 姓名 varchar2(4 char) not null, 专业 varchar2(1 char)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库实验一">
-<meta property="og:url" content="http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/index.html">
+<meta property="og:url" content="http://example.com/2020/12/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/index.html">
 <meta property="og:site_name" content="清风逝">
-<meta property="og:description" content="模式对象和用户权限管理 1. 索引，写出相应的SQL命令 创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样) 1234567create table student1(学号 varchar2(4) not null,--默认为type 姓名 varchar2(4 char) not null, 专业 varchar2(1 char) n">
+<meta property="og:description" content="模式对象和用户权限管理 1. 索引，写出相应的SQL命 令 创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样) 1234567create table student1(学号 varchar2(4) not null,--默认为type 姓名 varchar2(4 char) not null, 专业 varchar2(1 char)">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/tou.webp">
-<meta property="article:published_time" content="2020-12-04T07:36:06.000Z">
-<meta property="article:modified_time" content="2020-12-04T12:33:38.001Z">
+<meta property="article:published_time" content="2020-12-08T03:36:06.000Z">
+<meta property="article:modified_time" content="2020-12-08T03:10:58.876Z">
 <meta property="article:author" content="Sakura">
+<meta property="article:tag" content="复习">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="PL&#x2F;SQL程序基础1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/tou.webp">
 <meta name="twitter:site" content="@无">
@@ -132,13 +137,13 @@
                 
                 <div class="kratos-post-meta text-center">
                     <span>
-                        <i class="fa fa-calendar"></i> 2020-12-04
+                        <i class="fa fa-calendar"></i> 2020-12-08
                         <i class="fa fa-folder"></i> 分类于 
                         <i class="fa fa-user"></i> 作者 Sakura
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~4.17K
+                            ~5.52K
                         
                         字
                         
@@ -149,7 +154,7 @@
                 
                 <hr />
                 <h2 id="模式对象和用户权限管理"><a href="#模式对象和用户权限管理" class="headerlink" title="模式对象和用户权限管理"></a>模式对象和用户权限管理</h2><hr>
-<h4 id="1-索引，写出相应的SQL命令"><a href="#1-索引，写出相应的SQL命令" class="headerlink" title="1. 索引，写出相应的SQL命令"></a>1. 索引，写出相应的SQL命令</h4><ol>
+<h4 id="1-索引，写出相应的SQL命-令"><a href="#1-索引，写出相应的SQL命-令" class="headerlink" title="1. 索引，写出相应的SQL命 令"></a>1. 索引，写出相应的SQL命 令</h4><ol>
 <li><p>创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student1</span><br><span class="line">(学号 <span class="built_in">varchar2</span>(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span>,<span class="comment">--默认为type</span></span><br><span class="line"> 姓名 <span class="built_in">varchar2</span>(<span class="number">4</span> <span class="built_in">char</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line"> 专业 <span class="built_in">varchar2</span>(<span class="number">1</span> <span class="built_in">char</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">注册日期 <span class="built_in">date</span>,</span><br><span class="line">状态 <span class="built_in">varchar2</span>(<span class="number">8</span>),</span><br><span class="line">Primary <span class="keyword">key</span>(学号));</span><br></pre></td></tr></table></figure>
 </li>
@@ -228,8 +233,8 @@
 <li><p>对选修C13课程的学生，按分数跳跃式排名（可以并列），显示名次与学号，按名次、学号升序排列。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--跳跃排序，以a，b为一组，组内再以b排序</span></span><br><span class="line"><span class="comment">--rank() over (PARTITION BY a,b order by a desc)</span></span><br><span class="line"><span class="comment">--连续排序，如果有两个1，则下一个为2</span></span><br><span class="line"><span class="comment">--dense_rank() over (PARTITION BY a,b order by a desc)</span></span><br><span class="line"><span class="comment">--顺序排序，及12345...</span></span><br><span class="line"><span class="comment">--row_number() over (PARTITION BY a,b order by a desc)</span></span><br><span class="line"><span class="keyword">select</span> 学号,课程号,分数,绩点,<span class="keyword">rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> nvl(<span class="string">&quot;分数&quot;</span>,<span class="number">0</span>) <span class="keyword">desc</span>) 名次 <span class="keyword">from</span> a_db.成绩 </span><br><span class="line"><span class="keyword">where</span> 课程号=<span class="string">&#x27;C13&#x27;</span> ;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查询每门课程考试成绩第一名(可以并列)的学生的学号与课程号，按课程号升序排列。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 课程号,学号,分数,姓名 <span class="keyword">from</span> a_db.成绩 b</span><br><span class="line"><span class="keyword">natural</span> <span class="keyword">join</span> a_db.学生 a</span><br><span class="line"><span class="keyword">where</span> 分数 <span class="keyword">in</span>(<span class="keyword">select</span> <span class="keyword">max</span>(分数) <span class="keyword">from</span> a_db.成绩 </span><br><span class="line"><span class="keyword">natural</span> <span class="keyword">join</span> a_db.学生 <span class="keyword">where</span> 课程号=b.课程号) <span class="keyword">order</span> <span class="keyword">by</span> 课程号;</span><br></pre></td></tr></table></figure>
+<li><p>查询每门课程考试成绩第一名(可以并列)的 生的学号与课程号，按课程号升序排列。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 课程号,学号,分数,姓名 <span class="keyword">from</span> a_db.成绩 b</span><br><span class="line"><span class="keyword">natural</span> <span class="keyword">join</span> a_db.学生 a</span><br><span class="line"><span class="keyword">where</span> 分数 <span class="keyword">in</span>(<span class="keyword">select</span> <span class="keyword">max</span>(分数) <span class="keyword">from</span> a_db.成绩 </span><br><span class="line"><span class="keyword">natural</span> <span class="keyword">join</span> a_db.学生 <span class="keyword">where</span> 课程号=b.课程号) <span class="keyword">order</span> <span class="keyword">by</span> 课程号;</span><br><span class="line"></span><br><span class="line"><span class="comment">---其他方法</span></span><br><span class="line">使用临时变量,定义一个自增序列</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> 课程号，姓名 </span><br><span class="line">  <span class="keyword">FROM</span> (<span class="keyword">select</span> 成绩.*,<span class="keyword">rank</span>()<span class="keyword">over</span>(<span class="keyword">PARTITION</span> <span class="keyword">by</span> 课程号 </span><br><span class="line">  <span class="keyword">order</span> <span class="keyword">by</span> 分数 <span class="keyword">DESC</span> <span class="keyword">NULLS</span> <span class="keyword">LAST</span>)RK </span><br><span class="line">  <span class="keyword">from</span> a_db.成绩)R <span class="keyword">left</span> <span class="keyword">join</span> a_db.学生 <span class="keyword">on</span> R.学号=学生.学号 </span><br><span class="line">  <span class="keyword">where</span> rk=<span class="number">1</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 课程号,姓名 <span class="keyword">asc</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>按平均分数对课程连续排名(可以并列)，显示名次、课程号与平均分数(保留2位小数)，按名次、课程号升序排列。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 课程号,<span class="keyword">round</span>(<span class="keyword">avg</span>(分数),<span class="number">2</span>) 平均分,<span class="keyword">dense_rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">avg</span>(分数)) 名次 <span class="keyword">from</span> a_db.成绩 <span class="keyword">natural</span> <span class="keyword">join</span> a_db.课程</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 课程号;</span><br></pre></td></tr></table></figure>
@@ -239,6 +244,9 @@
 </li>
 <li><p>列出工资在3500到5000之间的员工的姓名，但只取姓名的前5个字符，不足5个则以*补足，按姓名升序排列</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> rpad(ename,<span class="number">5</span>,<span class="string">&#x27;*&#x27;</span>)<span class="keyword">as</span> 姓名 </span><br><span class="line">  <span class="keyword">from</span> a_db.emp <span class="keyword">where</span> sal <span class="keyword">between</span> <span class="number">3500</span> <span class="keyword">and</span> <span class="number">5000</span> </span><br><span class="line">  <span class="keyword">order</span> <span class="keyword">by</span> ename;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>补充笔记</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*1、top限制*/</span></span><br><span class="line"><span class="comment">-- 查询年龄最大的三个学生的姓名、年龄、所在系</span></span><br><span class="line"><span class="keyword">SELECT</span> top <span class="number">3</span> Sname, Sage, Sdept <span class="keyword">FROM</span> student <span class="keyword">ORDER</span> <span class="keyword">BY</span> Sage <span class="keyword">DESC</span></span><br><span class="line"><span class="comment">-- 查询年龄最大的三个学生的姓名、年龄、所在系（包括年龄并列第3名）</span></span><br><span class="line"><span class="keyword">SELECT</span> top <span class="number">3</span> <span class="keyword">WITH</span> <span class="keyword">TIES</span> Sname, Sage, Sdept <span class="keyword">FROM</span> student <span class="keyword">ORDER</span> <span class="keyword">BY</span> Sage <span class="keyword">DESC</span></span><br><span class="line"><span class="comment">-- 查询大学英语考试成绩最高的的前三名学生的姓名、所在系和大学英语考试成绩</span></span><br><span class="line"><span class="keyword">SELECT</span> top <span class="number">3</span> <span class="keyword">WITH</span> <span class="keyword">TIES</span> Sname,Sdept,Cname,Grade <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno = sc.Sno <span class="keyword">JOIN</span> course <span class="keyword">ON</span> course.Cno = sc.Cno <span class="keyword">WHERE</span> Cname = <span class="string">&#x27;大学英语&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> Grade <span class="keyword">DESC</span></span><br><span class="line"><span class="comment">-- 查询选课人数最少的两门课程（不包括没有人选的课程），列出课程号和选课人数</span></span><br><span class="line"><span class="keyword">SELECT</span> top <span class="number">2</span> <span class="keyword">WITH</span> <span class="keyword">TIES</span> Cno,<span class="keyword">COUNT</span>(*)<span class="keyword">AS</span> 选课人数 <span class="keyword">FROM</span> sc  <span class="keyword">GROUP</span> <span class="keyword">BY</span> Cno <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">COUNT</span>(*) <span class="keyword">ASC</span></span><br><span class="line"><span class="comment">-- 查询计算机系选课门数超过两门的学生中，考试平均成绩最高的前两名（包括并列的情况）学生的序号、选课门数和平均成绩</span></span><br><span class="line"><span class="keyword">SELECT</span> top <span class="number">2</span> <span class="keyword">WITH</span> <span class="keyword">TIES</span> s.Sno,<span class="keyword">AVG</span>(Grade)<span class="keyword">AS</span> 平均成绩 ,<span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> 选课门数 <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno = sc.Sno</span><br><span class="line"><span class="keyword">WHERE</span> Sdept = <span class="string">&#x27;计算机系&#x27;</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> s.Sno <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(*) &gt; <span class="number">2</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">AVG</span>(Grade) <span class="keyword">DESC</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*2、将查询结果保存到表中*/</span></span><br><span class="line"><span class="comment">-- 查询计算机系学生的学号、姓名、性别和年龄，并将查询结果保存到新表student_CS中</span></span><br><span class="line"><span class="keyword">SELECT</span> Sno,Sname,Ssex,Sage <span class="keyword">INTO</span> student_CS <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> Sdept = <span class="string">&#x27;计算机系&#x27;</span></span><br><span class="line"><span class="comment">-- 查询计算机系学生的学号、姓名、性别和年龄，并将查询结果保存到临时表student_CS_Two中</span></span><br><span class="line"><span class="keyword">SELECT</span> Sno,Sname,Ssex,Sage <span class="keyword">INTO</span> <span class="comment">#student_CS_Two FROM student WHERE Sdept = &#x27;计算机系&#x27;</span></span><br></pre></td></tr></table></figure>
 
 
 </li>
@@ -296,7 +304,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/",
+                text: "http://example.com/2020/12/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -308,12 +316,12 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/";
+            const hostUrl       = "http://example.com/2020/12/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/";
             const title         = "「数据库实验一」";
             const excerpt       = `模式对象和用户权限管理
-1. 索引，写出相应的SQL命令
+1. 索引，写出相应的SQL命 令
 创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样)
-1234567create table student1(学号...`;
+1234567create table student1(学...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -332,10 +340,10 @@
                 <div class="footer-tag clearfix">
                     <div class="pull-left">
                     <i class="fa fa-tags"></i>
-                        
+                        <a class="tag-none-link" href="/tags/PL-SQL%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%801/" rel="tag">PL/SQL程序基础1</a>, <a class="tag-none-link" href="/tags/sql/" rel="tag">sql</a>, <a class="tag-none-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a>, <a class="tag-none-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2020-12-04</span>
+                    <span>最后编辑：2020-12-08</span>
                     </div>
                 </div>
             </footer>
@@ -344,13 +352,9 @@
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" tomcat" href="/2020/11/27/tomcat配置/">&lt; 上一篇</a>
+                    <a title=" 触发器实验" href="/2020/12/06/触发器实验/">&lt; 上一篇</a>
                 </div>
                 
-                
-                <div class="nav-next clearfix">
-                    <a title=" 数据库实验二" href="/2020/12/04/数据库实验二/">下一篇 &gt;</a>
-                </div>
                 
             </nav>
         
@@ -385,7 +389,7 @@
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/PL-SQL%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%801/" style="font-size: 0.6em;">PL/SQL程序基础1</a> <a href="/tags/sql/" style="font-size: 0.67em;">sql</a> <a href="/tags/web/" style="font-size: 0.6em;">web</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 0.8em;">复习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.67em;">数据库</a> <a href="/tags/%E6%B8%B8%E6%A0%87%E4%B8%8E%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 0.6em;">游标与异常处理</a> <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 0.6em;">物联网</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.73em;">笔记</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 0.6em;">经济学</a> <a href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 0.6em;">触发器</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.6em;">论文</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/" style="font-size: 0.6em;">马克思主义</a>
+        <a href="/tags/PL-SQL%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%801/" style="font-size: 0.65em;">PL/SQL程序基础1</a> <a href="/tags/sql/" style="font-size: 0.7em;">sql</a> <a href="/tags/web/" style="font-size: 0.6em;">web</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 0.8em;">复习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 0.7em;">数据库</a> <a href="/tags/%E6%B8%B8%E6%A0%87%E4%B8%8E%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 0.6em;">游标与异常处理</a> <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 0.6em;">物联网</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.75em;">笔记</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 0.6em;">经济学</a> <a href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 0.6em;">触发器</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.6em;">计算机网络</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.6em;">论文</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/" style="font-size: 0.6em;">马克思主义</a>
       </div>
   </aside>
 
@@ -396,6 +400,12 @@
   <div class="tab-content">
       <ul class="list-group">
         
+        
+          
+          
+            <a class="list-group-item" href="/2020/12/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/"><i class="fa  fa-book"></i> 数据库实验一</a>
+            
+          
         
           
           
@@ -418,12 +428,6 @@
           
           
             <a class="list-group-item" href="/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/"><i class="fa  fa-book"></i> 数据库实验二</a>
-            
-          
-        
-          
-          
-            <a class="list-group-item" href="/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/"><i class="fa  fa-book"></i> 数据库实验一</a>
             
           
         
