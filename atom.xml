@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>清风逝</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-01-01T08:37:40.874Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Sakura</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于概率模型的聚类算法</title>
+    <link href="http://example.com/2021/01/01/%E5%9F%BA%E4%BA%8E%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/"/>
+    <id>http://example.com/2021/01/01/%E5%9F%BA%E4%BA%8E%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/</id>
+    <published>2021-01-01T04:57:57.000Z</published>
+    <updated>2021-01-01T08:37:40.874Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基于概率模型的聚类算法&quot;&gt;&lt;a href=&quot;#基于概率模型的聚类算法&quot; class=&quot;headerlink&quot; title=&quot;基于概率模型的聚类算法&quot;&gt;&lt;/a&gt;基于概率模型的聚类算法&lt;/h2&gt;&lt;hr&gt;
+&lt;h4 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="模型聚类算法" scheme="http://example.com/categories/%E6%A8%A1%E5%9E%8B%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="机器学习 聚类算法 概率模型聚类算法" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95-%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库实验一</title>
+    <link href="http://example.com/2020/12/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/"/>
+    <id>http://example.com/2020/12/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%80/</id>
+    <published>2020-12-08T03:36:06.000Z</published>
+    <updated>2020-12-31T03:29:04.834Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;模式对象和用户权限管理&quot;&gt;&lt;a href=&quot;#模式对象和用户权限管理&quot; class=&quot;headerlink&quot; title=&quot;模式对象和用户权限管理&quot;&gt;&lt;/a&gt;模式对象和用户权限管理&lt;/h2&gt;&lt;hr&gt;
+&lt;h4 id=&quot;1-索引，写出相应的SQL命-令&quot;&gt;&lt;a href=&quot;#1-索引，写出相应的SQL命-令&quot; class=&quot;headerlink&quot; title=&quot;1. 索引，写出相应的SQL命 令&quot;&gt;&lt;/a&gt;1. 索引，写出相应的SQL命 令&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;创建student1表，并为student1表建立主键。(“student1”的结构与“a_db.学生”表一样)&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-sql&quot; data-language=&quot;sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;table&lt;/span&gt; student1
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;学号 varchar2&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;--默认为type&lt;/span&gt;
+ 姓名 varchar2&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+ 专业 varchar2&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+注册日期 &lt;span class=&quot;token keyword&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+状态 varchar2&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;Primary&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;学号&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;为studen1表的姓名创建索引obj1_1&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    
+    
+    
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="复习" scheme="http://example.com/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="PL/SQL程序基础1" scheme="http://example.com/tags/PL-SQL%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%801/"/>
+    
+    <category term="sqli" scheme="http://example.com/tags/sqli/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>触发器实验</title>
+    <link href="http://example.com/2020/12/06/%E8%A7%A6%E5%8F%91%E5%99%A8%E5%AE%9E%E9%AA%8C/"/>
+    <id>http://example.com/2020/12/06/%E8%A7%A6%E5%8F%91%E5%99%A8%E5%AE%9E%E9%AA%8C/</id>
+    <published>2020-12-06T02:50:00.000Z</published>
+    <updated>2020-12-28T02:40:30.606Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;触发器&quot;&gt;&lt;a href=&quot;#触发器&quot; class=&quot;headerlink&quot; title=&quot;触发器&quot;&gt;&lt;/a&gt;触发器&lt;/h2&gt;&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;创建一个emp1表的插入或修改触发器，功能是：员工的工资不能超过自己的经理的工资，超过则报错误。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-sql&quot; data-language=&quot;sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt; &lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;trigger&lt;/span&gt; obj5_1
+ 	before &lt;span class=&quot;token keyword&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; emp1 &lt;span class=&quot;token keyword&quot;&gt;for each row&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ 	&lt;span class=&quot;token keyword&quot;&gt;declare&lt;/span&gt;
+ 	v emp1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ 	 PRAGMA AUTONOMOUS_TRANSACTION&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ 	 &lt;span class=&quot;token keyword&quot;&gt;begin&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; sal &lt;span class=&quot;token keyword&quot;&gt;into&lt;/span&gt; v &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp1 &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; deptno&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; :new&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deptno &lt;span class=&quot;token operator&quot;&gt;and&lt;/span&gt; job&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;manager&#39;&lt;/span&gt;
+ 	 &lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt;
+ 	 	&lt;span class=&quot;token keyword&quot;&gt;when&lt;/span&gt; INSERTING &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; :new&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;&amp;gt;&lt;/span&gt;v_sa 
+       &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+         raise_application_error &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20001&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;员工工资不能高于自己的经理工资&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;token keyword&quot;&gt;when&lt;/span&gt; UPDATING &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+     &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; :new&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sal&lt;span class=&quot;token operator&quot;&gt;&amp;gt;&lt;/span&gt;v_sa &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+     raise_application_error &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20001&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;员工工资不能高于自己的经理工资&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    
+    
+    
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="复习" scheme="http://example.com/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+    <category term="sql" scheme="http://example.com/tags/sql/"/>
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="触发器" scheme="http://example.com/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库实验四</title>
+    <link href="http://example.com/2020/12/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/"/>
+    <id>http://example.com/2020/12/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/</id>
+    <published>2020-12-05T08:09:51.000Z</published>
+    <updated>2020-12-28T02:41:31.153Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;PL-SQL程序基础2&quot;&gt;&lt;a href=&quot;#PL-SQL程序基础2&quot; class=&quot;headerlink&quot; title=&quot;PL/SQL程序基础2&quot;&gt;&lt;/a&gt;PL/SQL程序基础2&lt;/h2&gt;&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在A_DB模式中有一个表tan1(a)，表中有若干个整数（不要管是否有重复）。&lt;br&gt;请编写一个名为obj4_1 的存储函数（无参数），统计该表中有多少个数是素数，并作为函数返回值返回。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-sql&quot; data-language=&quot;sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;--修改用户名,可以自己修改自己的密码&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;alter&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;user&lt;/span&gt; 用户名 identified &lt;span class=&quot;token keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;新密码&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+
+
+&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;or&lt;/span&gt; preplace &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; obj4_1 &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;integer&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt;
+ a &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; :&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ f &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; :&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;token keyword&quot;&gt;begin&lt;/span&gt;
+ &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; e &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; form A_db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tanl&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;loop&lt;/span&gt;
+ 	&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;trunc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sqrt&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;loop&lt;/span&gt;
+ 		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+ 			f:&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ 			&lt;span class=&quot;token keyword&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ 		&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ 	&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ 	
+ 	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; f&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+ 		a:&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;a&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ 	&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    
+    
+    
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="复习" scheme="http://example.com/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+    <category term="sql" scheme="http://example.com/tags/sql/"/>
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库实验三</title>
+    <link href="http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89/"/>
+    <id>http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89/</id>
+    <published>2020-12-04T13:35:29.000Z</published>
+    <updated>2020-12-28T02:41:23.563Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;游标的异常处理&quot;&gt;&lt;a href=&quot;#游标的异常处理&quot; class=&quot;headerlink&quot; title=&quot;游标的异常处理&quot;&gt;&lt;/a&gt;游标的异常处理&lt;/h2&gt;&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用显式游标输出emp表的所有信息。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-sql&quot; data-language=&quot;sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;procedure&lt;/span&gt; obj3_1
+&lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;declare&lt;/span&gt; 
+	&lt;span class=&quot;token keyword&quot;&gt;cursor&lt;/span&gt; obj3_1 &lt;span class=&quot;token operator&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;begin&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; obj3_1 &lt;span class=&quot;token keyword&quot;&gt;loop&lt;/span&gt;
+		dbms_output&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;put_line&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;empno&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;,&#39;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ename&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用隐式游标输出dept表的所有信息。&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    
+    
+    
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="复习" scheme="http://example.com/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+    <category term="sql" scheme="http://example.com/tags/sql/"/>
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="游标与异常处理" scheme="http://example.com/tags/%E6%B8%B8%E6%A0%87%E4%B8%8E%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库实验二</title>
+    <link href="http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/"/>
+    <id>http://example.com/2020/12/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/</id>
+    <published>2020-12-04T11:37:46.000Z</published>
+    <updated>2020-12-28T02:41:15.411Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;PL-SQL程序基础1&quot;&gt;&lt;a href=&quot;#PL-SQL程序基础1&quot; class=&quot;headerlink&quot; title=&quot;PL/SQL程序基础1&quot;&gt;&lt;/a&gt;PL/SQL程序基础1&lt;/h2&gt;&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;输出名为SMITH的雇员的工资和职位。(存储过程)&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-sql&quot; data-language=&quot;sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;--set serveroutput on;不能输出时先运行这一句话&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;replace&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;procedure&lt;/span&gt; obj2_1 &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt;
+   vjob VARCHAR2&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   vsal NUMBER&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;begin&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; job&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;sal
+        &lt;span class=&quot;token keyword&quot;&gt;into&lt;/span&gt; vjob&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vsal
+        &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; emp
+        &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; ename &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;SMITH&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    dbms_output&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;put_line&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;job:&#39;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;vjob&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;,sal:&#39;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;vsal&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    
+    
+    
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="复习" scheme="http://example.com/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+    <category term="sql" scheme="http://example.com/tags/sql/"/>
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="PL/SQL程序基础1" scheme="http://example.com/tags/PL-SQL%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%801/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tomcat</title>
+    <link href="http://example.com/2020/11/27/tomcat%E9%85%8D%E7%BD%AE/"/>
+    <id>http://example.com/2020/11/27/tomcat%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-11-27T06:42:23.000Z</published>
+    <updated>2020-12-28T02:41:49.581Z</updated>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt; 查看被占用的端口号： &lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;line-numbers language-c++&quot; data-language=&quot;c++&quot;&gt;&lt;code class=&quot;language-c++&quot;&gt;netstat -ano | findstr 8080&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 杀死占用的端口号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;line-numbers language-c++&quot; data-language=&quot;c++&quot;&gt;&lt;code class=&quot;language-c++&quot;&gt;taskkill /pid 14188 /f&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    
+    <category term="web" scheme="http://example.com/tags/web/"/>
+    
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络[C复习</title>
+    <link href="http://example.com/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-C%E5%A4%8D%E4%B9%A0/"/>
+    <id>http://example.com/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-C%E5%A4%8D%E4%B9%A0/</id>
+    <published>2020-11-26T06:44:31.000Z</published>
+    <updated>2020-12-28T02:40:56.104Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://soporbear.github.io/&quot;&gt;**&lt;br&gt;Lilin**&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://soporbear.github.io/&quot;&gt; 首页&lt;/a&gt; &lt;a href=&quot;https://soporbear.github.io/tags/&quot;&gt; 标签&lt;/a&gt; &lt;a href=&quot;https://soporbear.github.io/categories/&quot;&gt; 分类&lt;/a&gt; &lt;a href=&quot;https://soporbear.github.io/archives/&quot;&gt; 归档&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;计算机网络-重点复习&quot;&gt;&lt;a href=&quot;#计算机网络-重点复习&quot; class=&quot;headerlink&quot; title=&quot;计算机网络-重点复习&quot;&gt;&lt;/a&gt;计算机网络-重点复习&lt;/h1&gt;&lt;p&gt; 2018-06-07 | &lt;a href=&quot;https://soporbear.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/&quot;&gt;计算机网络&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;第一章：概论&quot;&gt;&lt;a href=&quot;#第一章：概论&quot; class=&quot;headerlink&quot; title=&quot;第一章：概论&quot;&gt;&lt;/a&gt;第一章：概论&lt;/h1&gt;&lt;h2 id=&quot;NO-1&quot;&gt;&lt;a href=&quot;#NO-1&quot; class=&quot;headerlink&quot; title=&quot;NO.1&quot;&gt;&lt;/a&gt;NO.1&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h3 id=&quot;OSI-RM&quot;&gt;&lt;a href=&quot;#OSI-RM&quot; class=&quot;headerlink&quot; title=&quot;OSI/RM&quot;&gt;&lt;/a&gt;OSI/RM&lt;/h3&gt;&lt;p&gt;国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一个七层体系结构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;h3 id=&quot;TCP-IP&quot;&gt;&lt;a href=&quot;#TCP-IP&quot; class=&quot;headerlink&quot; title=&quot;TCP/IP&quot;&gt;&lt;/a&gt;TCP/IP&lt;/h3&gt;&lt;p&gt;得到最广泛应用的计算机网络体系结构，被称为是事实上的国际标准，是一个四层体系结构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;h3 id=&quot;五层协议模型&quot;&gt;&lt;a href=&quot;#五层协议模型&quot; class=&quot;headerlink&quot; title=&quot;五层协议模型&quot;&gt;&lt;/a&gt;五层协议模型&lt;/h3&gt;&lt;p&gt;综合OSI和TCP/IP的优点，在学习计算机网络时采用一种只有五层协议的体系结构，既简洁又能将概念阐释清楚&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="复习" scheme="http://example.com/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>物联网复习</title>
+    <link href="http://example.com/2020/11/26/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/"/>
+    <id>http://example.com/2020/11/26/%E7%89%A9%E8%81%94%E7%BD%91%E5%A4%8D%E4%B9%A0/</id>
+    <published>2020-11-26T06:42:23.000Z</published>
+    <updated>2020-12-28T02:41:39.356Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;一-概述&quot;&gt;&lt;a href=&quot;#一-概述&quot; class=&quot;headerlink&quot; title=&quot;一.概述&quot;&gt;&lt;/a&gt;一.概述&lt;/h3&gt;&lt;h4 id=&quot;1-物联网English-★&quot;&gt;&lt;a href=&quot;#1-物联网English-★&quot; class=&quot;headerlink&quot; title=&quot;1.物联网English ★&quot;&gt;&lt;/a&gt;1.物联网English ★&lt;/h4&gt;&lt;p&gt;​        &lt;strong&gt;INTERNET OF THINGS&lt;/strong&gt;（ IOT ）&lt;/p&gt;
+&lt;h4 id=&quot;2-物联网定义&quot;&gt;&lt;a href=&quot;#2-物联网定义&quot; class=&quot;headerlink&quot; title=&quot;2.物联网定义&quot;&gt;&lt;/a&gt;2.物联网定义&lt;/h4&gt;&lt;p&gt;​        物联网是具有自我标识、感知和智能的物理实体基于通信技术相互连接形成的网络，这些物理设备可以在无需人工干预的条件下实现协同和互动，为人们提供智慧和集约的服务。传感网是物联网的基础，是物联网的组成部分。&lt;/p&gt;
+&lt;h4 id=&quot;3-物联网三层体系结构-★&quot;&gt;&lt;a href=&quot;#3-物联网三层体系结构-★&quot; class=&quot;headerlink&quot; title=&quot;3.物联网三层体系结构 ★&quot;&gt;&lt;/a&gt;3.物联网三层体系结构 ★&lt;/h4&gt;&lt;h5 id=&quot;感知层-★&quot;&gt;&lt;a href=&quot;#感知层-★&quot; class=&quot;headerlink&quot; title=&quot;感知层 ★&quot;&gt;&lt;/a&gt;感知层 ★&lt;/h5&gt;&lt;p&gt;​        &lt;strong&gt;感知层是物联网的皮肤和五官——识别物体，采集信息。&lt;/strong&gt;1.感知和识别物体，采集和捕获信息；2.完成信息的收集与简单处理；3.主要由传统的WSN、RFID和执行器组成。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="复习" scheme="http://example.com/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+    <category term="物联网" scheme="http://example.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工程经济学</title>
+    <link href="http://example.com/2020/11/22/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    <id>http://example.com/2020/11/22/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E6%B5%8E%E5%AD%A6/</id>
+    <published>2020-11-22T14:46:44.000Z</published>
+    <updated>2020-12-28T02:40:47.794Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;工程经济学&quot;&gt;&lt;a href=&quot;#工程经济学&quot; class=&quot;headerlink&quot; title=&quot;工程经济学&quot;&gt;&lt;/a&gt;工程经济学&lt;/h2&gt;&lt;h2 id=&quot;复习&quot;&gt;&lt;a href=&quot;#复习&quot; class=&quot;headerlink&quot; title=&quot;复习&quot;&gt;&lt;/a&gt;复习&lt;/h2&gt;&lt;h4 id=&quot;基本名词概念&quot;&gt;&lt;a href=&quot;#基本名词概念&quot; class=&quot;headerlink&quot; title=&quot;基本名词概念&quot;&gt;&lt;/a&gt;&lt;strong&gt;基本名词概念&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;工程经济学:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;研究工程与经济相结合的发展规律的学科，它以工程-经济系统为客体，以实现工程中资源的合理配置和有效使用，提高工程有效性为目的。 &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;资金的时间价值学:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;资金在社会再生产过程中随着时间推移而产生的增值。 &lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="复习" scheme="http://example.com/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+    <category term="经济学" scheme="http://example.com/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>马原论文</title>
+    <link href="http://example.com/2020/11/22/%E9%A9%AC%E5%8E%9F%E8%AE%BA%E6%96%87/"/>
+    <id>http://example.com/2020/11/22/%E9%A9%AC%E5%8E%9F%E8%AE%BA%E6%96%87/</id>
+    <published>2020-11-22T12:46:44.000Z</published>
+    <updated>2020-12-28T02:41:06.426Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;马原期末论文&quot;&gt;&lt;a href=&quot;#马原期末论文&quot; class=&quot;headerlink&quot; title=&quot;马原期末论文&quot;&gt;&lt;/a&gt;马原期末论文&lt;/h2&gt;&lt;h3 id=&quot;试论马克思主义当代价值&quot;&gt;&lt;a href=&quot;#试论马克思主义当代价值&quot; class=&quot;headerlink&quot; title=&quot;试论马克思主义当代价值&quot;&gt;&lt;/a&gt;试论马克思主义当代价值&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;关键词：马克思主义，基本原理，当代价值 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;选题背景&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;​        首先，马克思主义自诞生以来在世界上产生了巨大的影响，尤其是中国，时代在变化，社会在发展，但马克思主义基本原理依然是科学的真理。其次，在中国共产党第十九次全国代表大会上习近平总书记首次提出的“新时代中国特色社会主义思想”中提及了有关和谐社会的内容。并且实践的观点是马克思主义哲学首要的和基本的观&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="论文" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87/"/>
+    
+    <category term="马克思主义" scheme="http://example.com/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/"/>
+    
+  </entry>
+  
+</feed>
